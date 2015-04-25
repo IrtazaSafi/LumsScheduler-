@@ -1,16 +1,10 @@
 class User < ActiveRecord::Base
 
-	def User.initialize(provider,uid,name)
-		@provider = provider
-		@uid = uid
-		@name = name
-	end
-
-	def self.id
-		self.id
-	end
-
+	attr_accessible :uid, :provider, :name
 	def self.create_with_omniauth(auth)
-		User.initialize(auth['provider'],auth['uid'],auth['info']['name'])
+		User.create!(
+			:provider => auth["provider"],
+			:uid => auth["uid"],
+			:name => auth["info"]["name"])
 	end
 end

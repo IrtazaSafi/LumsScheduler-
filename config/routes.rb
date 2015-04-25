@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
-  get   '/start', :to => 'sessions#new', :as => :start
+  get   '/start', :to => 'sessions#checklogin', :as => :start
+
+  get '/login',:to => 'sessions#new',:as => :login
 
   get 'auth/:provider/callback' => 'sessions#create'
   get 'auth/failure' => 'sessions#failure'
-  post 'logout' => 'sessions#destroy'
+  get 'logout' => 'sessions#destroy'
 
   root :to => redirect('/start')
+
+  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.

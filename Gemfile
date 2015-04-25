@@ -34,6 +34,8 @@ gem 'cucumber'
 gem 'cucumber-rails-training-wheels'
 gem 'database_cleaner'
 gem 'omniauth-facebook'
+gem 'protected_attributes'
+
 
 
 

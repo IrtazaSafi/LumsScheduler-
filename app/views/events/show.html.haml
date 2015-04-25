@@ -1,23 +1,25 @@
+%h2 Details about #{@event.title}
 
-%center
-	%h1 
-		=@event.title
-	%br
+%ul#details
+  %li
+    Start Time:
+    = @event.starttime
+  %li
+    End Time:
+    = @event.endtime
+  %li
+    Status:
+    = @event.status
+  %li
+    Location:
+    = @event.location
 
-	%h1 
-		= @event.starttime
-	%br
-	%h1 
-		= @event.endtime
-	%br
-	%h1 
-		= @event.location
-	%br
-	%h1 
-		= @event.status
-	%br
-	%h1 
-		= @event.description
+%h3 Description:
+
+%p#description= @event.description
+
+%h1
+  = link_to 'Delete',user_event_path,:method => :delete
 
 
 

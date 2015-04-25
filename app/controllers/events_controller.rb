@@ -15,8 +15,14 @@ end
 
 def show
 	@event = Event.find_by_id(params[:id])
-	
 
+end
+
+def destroy
+	@event = Event.find_by_id(params[:id])
+	@event.destroy
+	flash[:notice] = "Event '#{@event.title}' deleted."
+    redirect_to users_path
 end
 
 

@@ -1,0 +1,10 @@
+
+%h1 Welcome To Lums Scheduler
+
+
+
+%p.SignUp= link_to 'SignUp with Facebook','/auth/facebook'
+
+- if flash[:notice]
+	#notice.message= flash[:notice]
+	

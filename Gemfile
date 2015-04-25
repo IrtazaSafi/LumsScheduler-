@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# use Haml for templates
+gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -32,6 +33,7 @@ gem 'cucumber-rails'
 gem 'cucumber'
 gem 'cucumber-rails-training-wheels'
 gem 'database_cleaner'
+gem 'omniauth-facebook'
 
 
 
@@ -48,7 +50,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

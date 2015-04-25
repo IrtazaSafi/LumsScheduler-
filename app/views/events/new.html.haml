@@ -1,0 +1,34 @@
+%center
+	= form_tag user_events_path ,:method =>:post do
+		= label :event, :title, 'Title'
+		= text_field :event, 'title'
+		%br
+		= hidden_field_tag 'ownerid',session[:user_id]
+
+		= label :event, :starttime, 'Start Time'
+		= datetime_select :event, 'startime'
+		%br
+
+		= label :event, :endtime, 'End Time'
+		= datetime_select :event, 'endtime'
+		%br
+
+
+		= label :event, :location , 'Location'
+		= text_field :event, 'location'
+		%br
+
+
+		= label :event, :status , 'Status'
+		= text_field :event, 'status'
+		%br
+		= label :event, :description , 'Description'
+		= text_area :event, 'description'
+
+		%br
+
+		= submit_tag 'Create Event'
+
+		
+
+		

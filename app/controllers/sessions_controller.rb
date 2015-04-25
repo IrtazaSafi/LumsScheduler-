@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 	end
   end
 
-  def new
+  def login
   	@numUsers = User.all.size
   	flash[:notice] = @numUsers
   end
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 
     end
 
-    flash[:notice] = "Welcome #{user.id} AND #{user.name}"
+    #flash[:notice] = "Welcome #{user.id} AND #{user.name}"
     redirect_to users_path
   end
 

@@ -13,6 +13,12 @@ def create
 	redirect_to users_path
 end
 
+def show
+	@event = Event.find_by_id(params[:id])
+	
+
+end
+
 
 
 

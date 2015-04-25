@@ -3,7 +3,7 @@
 		= label :event, :title, 'Title'
 		= text_field :event, 'title'
 		%br
-		= hidden_field_tag 'ownerid',session[:user_id]
+		= hidden_field_tag 'event[ownerid]',session[:user_id] 
 
 		= label :event, :starttime, 'Start Time'
 		= datetime_select :event, 'startime'

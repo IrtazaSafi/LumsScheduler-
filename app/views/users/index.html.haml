@@ -28,12 +28,7 @@
 		- @allevents.each do |event|
 			%tr
 				%td{:class => @title_header}= link_to event.title,user_event_path(session[:user_id],event.id)
-				- if event.ownerid != nil
-					%td=  User.find_by_id(event.ownerid).name
-				-else
-					%td= ''
-				
-
+				%td=  User.find_by_id(event.ownerid).name
 				%td= event.starttime
 				%td= event.endtime
 				%td= event.location

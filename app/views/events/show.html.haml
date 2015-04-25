@@ -20,7 +20,7 @@
 
 %h1
   = link_to 'Delete',user_event_path,:method => :delete
-
+  = link_to 'Edit',edit_user_event_path(session[:user_id], @event.id)
 
 
 

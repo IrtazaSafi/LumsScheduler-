@@ -15,7 +15,12 @@ end
 
 def show
 	@event = Event.find_by_id(params[:id])
-
+end
+def update
+	@event = Event.find_by_id params[:id]
+    @event.update_attributes!(params[:event])
+    flash[:notice] = "#{@event.title} was successfully updated."
+    redirect_to users_path
 end
 
 def destroy
@@ -23,6 +28,9 @@ def destroy
 	@event.destroy
 	flash[:notice] = "Event '#{@event.title}' deleted."
     redirect_to users_path
+end
+def edit
+    @event = Event.find_by_id params[:id]
 end
 
 

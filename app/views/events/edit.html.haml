@@ -1,0 +1,28 @@
+%center
+	= form_tag user_event_path(session[:user_id], params[:id]) ,:method => :put do
+		= label :event, :title, 'Title'
+		= text_field :event, 'title'
+		%br
+		= hidden_field_tag 'event[ownerid]',session[:user_id] 
+
+		%br
+
+		= label :event, :endtime, 'End Time'
+		= datetime_select :event, 'endtime'
+		%br
+
+
+		= label :event, :location , 'Location'
+		= text_field :event, 'location'
+		%br
+
+
+		= label :event, :status , 'Status'
+		= text_field :event, 'status'
+		%br
+		= label :event, :description , 'Description'
+		= text_area :event, 'description'
+
+		%br
+
+		= submit_tag 'Edit Event'

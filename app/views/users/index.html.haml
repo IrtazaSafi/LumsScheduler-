@@ -2,17 +2,8 @@
 
 %center
 	%h1
-		= "Welcome #{@currUser.name}"
+		= "Welcome #{@currUser.name} (ID = #{@currUser.id})"
 		%br
-		= "UserID #{@currUser.id}"
-		%br
-		= link_to 'Add New Event',new_user_event_path(session[:user_id])
-
-
-		- if flash[:notice]
-			#notice.message= flash[:notice]
-
-		= @allevents.size
 
 	%table#events
 		%thead
@@ -35,4 +26,5 @@
 				%td= event.status
 				%td= event.description
 
-%p.Logout= link_to 'Logout',logout_path
+	= link_to 'Add New Event',new_user_event_path(session[:user_id])
+	%p.Logout= link_to 'Logout',logout_path

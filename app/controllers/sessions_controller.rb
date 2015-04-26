@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
   def login
   	@numUsers = User.all.size
-  	flash[:notice] = @numUsers
+  	flash[:notice] = "Total users = #{@numUsers}"
   end
 
   def create
@@ -23,11 +23,6 @@ class SessionsController < ApplicationController
     puts "CLASS OF USER IS #{user.class}"
     session[:user_id] = user.id
 
-
-    if (user == nil)
-    	puts "USER IS NILL"
-
-    end
 
     #flash[:notice] = "Welcome #{user.id} AND #{user.name}"
     redirect_to users_path

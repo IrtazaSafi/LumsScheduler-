@@ -15,7 +15,12 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+    when /^the LumsScheduler home page/
+      '/login'
+    when /^the User's home page/
+      '/user#_=_'
+    when /^the Provider's permission page/
+      ''
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

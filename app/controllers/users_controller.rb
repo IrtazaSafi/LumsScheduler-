@@ -6,5 +6,6 @@ class UsersController < ApplicationController
 		if @currUser != nil
 			@allevents = @currUser.events
 		end
+		#random coommmetn
 	end
 end

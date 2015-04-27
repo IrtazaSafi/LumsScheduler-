@@ -17,15 +17,12 @@ module NavigationHelpers
       '/'
     when /^the LumsScheduler home page/
       '/login'
-    when /^the user home page for "(.*)"$/
-      user_path($1)
-    
-    # Add more mappings here.
-    # Here is an example that pulls values out of the Regexp:
-    #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
-
+    when /^the user home page for "(.*)"$/i
+      user_path User.find_by_name($1).id
+    when /^the Add new Events page/
+      '/users/1/events/new'
+    when /^the Event details  page/
+      'users/1/events/2'
     else
       begin
         page_name =~ /^the (.*) page$/

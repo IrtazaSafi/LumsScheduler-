@@ -4,7 +4,8 @@ As a user
 So that I can schedule my events
 I should be able to log in and log out of the application
 
-Background: Given the following users exist:
+Background: users in database
+Given the following users exist:
 	| name | uid |
 	| Usman Nadeem | 1 |
 	| Umaira Sajjad | 3 |
@@ -16,5 +17,5 @@ Scenario: User should be able to log in
 
 Scenario: User should be able to log out
 	Given I am on the user home page for "Usman Nadeem"
-	And I press "Logout"
+	And I follow "Logout"
 	Then I should be on the LumsScheduler home page

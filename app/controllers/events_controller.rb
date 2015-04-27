@@ -10,7 +10,7 @@ def create
 	params[:event][:user_id] = session[:user_id]
 	@event = Event.create!(params[:event])
 	flash[:notice] = "New Event Created"
-	redirect_to users_path
+	redirect_to  user_path session[:user_id]
 end
 
 def show
@@ -20,14 +20,14 @@ def update
 	@event = Event.find_by_id params[:id]
     @event.update_attributes!(params[:event])
     flash[:notice] = "#{@event.title} was successfully updated."
-    redirect_to users_path
+    redirect_to user_path session[:user_id]
 end
 
 def destroy
 	@event = Event.find_by_id(params[:id])
 	@event.destroy
 	flash[:notice] = "Event '#{@event.title}' deleted."
-    redirect_to users_path
+    redirect_to user_path session[:user_id]
 end
 def edit
     @event = Event.find_by_id params[:id]

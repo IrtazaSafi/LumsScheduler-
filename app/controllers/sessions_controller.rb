@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 	    redirect_to login_path
 	    return
   	else 
-  		redirect_to users_path
+  		redirect_to user_path session[:user_id]
   		return
 	end
   end
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
 
 
     #flash[:notice] = "Welcome #{user.id} AND #{user.name}"
-    redirect_to users_path
+    redirect_to user_path user.id
   end
 
   def failure

@@ -1,0 +1,30 @@
+
+
+%center
+	%h1
+		= "Welcome #{@currUser.name} (ID = #{@currUser.id})"
+		%br
+
+	%table#events
+		%thead
+			%tr
+				%th Event Title
+				%th Owner
+				%th Start Time
+				%th End Time
+				%th Location
+				%th Status
+				%th Description
+		%tbody
+		- @allevents.each do |event|
+			%tr
+				%td{:class => @title_header}= link_to event.title,user_event_path(params[:user_id],event.id)
+				%td=  User.find_by_id(event.ownerid).name
+				%td= event.starttime
+				%td= event.endtime
+				%td= event.location
+				%td= event.status
+				%td= event.description
+
+	= link_to 'Add New Event',new_user_event_path(params[:user_id])
+	%p.Logout= link_to 'Logout',logout_path

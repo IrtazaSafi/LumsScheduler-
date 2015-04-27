@@ -17,10 +17,9 @@ module NavigationHelpers
       '/'
     when /^the LumsScheduler home page/
       '/login'
-    when /^the User's home page/
-      users_path User.find_by_id($1)
-    when /^the Provider's permission page/
-      '/auth/:provider/callback'
+    when /^the user home page for "(.*)"$/
+      user_path($1)
+    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

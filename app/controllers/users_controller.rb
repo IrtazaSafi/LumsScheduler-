@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
 
-	def index
-		@currUser = User.find_by_id(session[:user_id])
-		@allevents = @currUser.events
-		
-
-
+	def show
+		@currUser = User.find_by_id(params[:id])
+		if @currUser != nil
+			@allevents = @currUser.events
+		end
 	end
-
-
 end

@@ -4,19 +4,17 @@ As a user
 So that I can schedule my events
 I should be able to log in and log out of the application
 
-Scenario: Sign Up with Facebook
+Background: Given the following users exist:
+	| name | uid |
+	| Usman Nadeem | 1 |
+	| Umaira Sajjad | 3 |
+
+Scenario: User should be able to log in
 	Given I am on the LumsScheduler home page
-	And I follow 'SignUp/Login with Facebook'
-	Then I should be on the Provider's permission page
-
-
-Scenario: Existing User should be able to Login
-	Given I am on the Provider's permission page
-	When I fill in "Username" with "Safi" and "Password" with "Safi"
-	And I press "Login"
-	Then I should be on the User's home page 
+	When I follow "SignUp/Login with Facebook"
+	Then I should be on the User's home page
 
 Scenario: User should be able to log out
-	Given I am on the User's home page
+	Given I am on the user home page for "Usman Nadeem"
 	And I press "Logout"
 	Then I should be on the LumsScheduler home page

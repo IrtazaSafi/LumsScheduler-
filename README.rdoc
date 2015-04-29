@@ -1,6 +1,7 @@
 == lums-scheduler
 
-
 * Heroku link = https://lums-scheduler.herokuapp.com/
 * Add heroku remote = heroku git:remote -a lums-scheduler
 
+* PivotalTracker: https://www.pivotaltracker.com/n/projects/1298516 Link to CodeClimate: https://codeclimate.com/github/IrtazaSafi/LumsScheduler-
+* CodeClimate : https://codeclimate.com/github/IrtazaSafi/LumsScheduler-/code

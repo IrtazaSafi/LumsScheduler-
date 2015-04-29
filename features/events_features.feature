@@ -23,12 +23,12 @@ Scenario: Existing user should be able to add events
 	Then I should be on the user home page for "Usman Nadeem"
 	And I should see "My Birthday"
 
-Scenario: Existing user adds and empty event(sad path)
+Scenario: Existing user adds an empty event(sad path)
 	And I follow "Add New Event"
 	Then I should be on the Add new Events page
-	When I fill in "Title" with " " 
+	When I fill in "Title" with "" 
 	And I press "Create Event"
-	Then I should see "Field required"
+	Then I should see "field should not be empty"
 
 Scenario: Events should be visible as scrollable list on user home page
 	Then I should see "Zirak's Birthday" 

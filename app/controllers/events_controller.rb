@@ -1,16 +1,26 @@
 class EventsController < ApplicationController
 
 def new
-	
 
 end
 
 def create
 	#params[:event][:duration] = params[:event][:endtime] - params[:event][:startime]
 	params[:event][:user_id] = session[:user_id]
-	@event = Event.create!(params[:event])
-	flash[:notice] = "New Event Created"
-	redirect_to  user_path session[:user_id]
+	@temp = params[:event][:title]
+	# logger.debug("VALUE OF TITLW: ")
+	# logger.debug(params[:event][:title])
+
+	if params[:event][:title] == ""
+		#logger.debug("I AM IN THIS IF CONDITION BIATCHES")
+		flash[:notice] = "Title field should not be empty!"
+		redirect_to new_user_event_path(session[:user_id])
+	#end 
+	else 
+		@event = Event.create!(params[:event])
+		flash[:notice] = "New Event Created"
+		redirect_to  user_path session[:user_id]
+	end
 end
 
 def show

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
-
+#writing etc.
   describe "GET #new" do
     it "returns http success" do
       get :new

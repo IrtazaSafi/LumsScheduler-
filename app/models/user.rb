@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 			:first_name => auth["info"]["first_name"],
 			:last_name => auth["info"]["last_name"],
 			:about => auth["info"]["about"],
-			:gender => auth["info"]["gender"],
+			:gender => auth["extra"]["raw_info"]["gender"],
 			:work => auth["info"]["work"],
 			:email => auth["info"]["email"],
 			:education => auth["info"]["education"])

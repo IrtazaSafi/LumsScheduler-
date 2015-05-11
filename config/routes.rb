@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   end
 
   get 'users/:id/view' => 'users#view',:as=> :showprofile
+  get 'users/:id/displayUsers' => 'users#displayUsers',:as=> :displayUsers
+  get 'users/:name/addFriend' => 'users#addFriend',:as=> :addFriend
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,7 +3,7 @@
 %center
 	%h1
 		= "Welcome" 
-		= link_to @currUser.name,showprofile_path(params[:id]) 
+		= link_to @currUser.name,showprofile_path 
 		= " (ID = #{@currUser.id})"
 		%br
 
@@ -30,4 +30,5 @@
 				%td= event.description
 
 	= link_to 'Add New Event',new_user_event_path(params[:id])
+	= link_to 'Add New Friend',displayUsers_path
 	%p.Logout= link_to 'Logout',logout_path

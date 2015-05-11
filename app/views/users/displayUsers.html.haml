@@ -1,0 +1,9 @@
+%table#users
+	%thead
+		%tr
+			%th User Name
+	%tbody
+	- @allusers.each do |user|
+		%tr
+			%td{:class => @title_header}= link_to user.name, addFriend_path(user.name)
+			

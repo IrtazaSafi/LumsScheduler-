@@ -2,8 +2,11 @@
 
 %center
 	%h1
-		= "Welcome #{@currUser.name} (ID = #{@currUser.id})"
+		= "Welcome" 
+		= link_to @currUser.name,showprofile_path(params[:id]) 
+		= " (ID = #{@currUser.id})"
 		%br
+
 
 	%table#events
 		%thead

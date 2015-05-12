@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 	end
 	def addFriend
 		temp = User.find_by_name(params[:name]);
-		Friend.create!(params[:uid => temp.uid, :provider=>temp.provider, :name=>temp.name,:first_name=>temp.first_name,:last_name=>temp.last_name,:about=>temp.about,:gender=>temp.gender,:work=>temp.work,:email=>temp.email,:education=>temp.education,:user_id => "1"]);
+		Friend.create!({:uid => temp.uid, :provider=>temp.provider, :name=>temp.name,:first_name=>temp.first_name,:last_name=>temp.last_name,:about=>temp.about,:gender=>temp.gender,:work=>temp.work,:email=>temp.email,:education=>temp.education,:user_id => session[:user_id]});
 		
 		currUser = User.find_by_id(session[:user_id])
 		flash[:notice] = "Friend Added!! #{temp.name} #{currUser.friends.size}"

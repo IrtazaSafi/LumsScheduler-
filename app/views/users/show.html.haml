@@ -8,6 +8,10 @@
 		%br
 
 
+	%h2
+		= "User's Events:"
+		%br
+
 	%table#events
 		%thead
 			%tr
@@ -30,5 +34,25 @@
 				%td= event.description
 
 	= link_to 'Add New Event',new_user_event_path(params[:id])
+	%br
+	%br
+	%br
+
+	%h2
+		= "User's Friends:"
+	%table#events
+		%thead
+			%tr
+				%th Name
+				%th Set up a meeting
+		%tbody
+		- @friends.each do |friend|
+			%tr
+				%td=  friend.name
+				%td{:class => @title_header}= link_to "Click me!",set_up_a_meeting_path(params[:id],friend.id)
+
+	%br
+	%br
+	%br
 	= link_to 'Add New Friend',displayUsers_path
 	%p.Logout= link_to 'Logout',logout_path

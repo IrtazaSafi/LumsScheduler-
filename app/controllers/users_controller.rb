@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 		# session[:user_id] = params[:id]
 		if @currUser != nil
 			@allevents = @currUser.events
+			@friends = @currUser.friends
 		else
 			flash[:notice] = "No such user"
 			redirect_to user_path session[:user_id]
@@ -27,11 +28,62 @@ class UsersController < ApplicationController
 	end
 	def addFriend
 		temp = User.find_by_name(params[:name]);
+		currUser = User.find_by_id(session[:user_id])
+		if temp.name == currUser.name
+			flash[:notice] = "Cannot add Friend!"
+			redirect_to user_path session[:user_id]
+			return
+		end
+		currUser.friends.each { |x| 
+			if x.name == temp.name
+				flash[:notice] = "Cannot add Friend!"
+				redirect_to user_path session[:user_id]
+				return
+			end
+		}
 		Friend.create!({:uid => temp.uid, :provider=>temp.provider, :name=>temp.name,:first_name=>temp.first_name,:last_name=>temp.last_name,:about=>temp.about,:gender=>temp.gender,:work=>temp.work,:email=>temp.email,:education=>temp.education,:user_id => session[:user_id]});
 		
-		currUser = User.find_by_id(session[:user_id])
-		flash[:notice] = "Friend Added!! #{temp.name} #{currUser.friends.size}"
+		flash[:notice] = "Friend Added!! #{temp.name}"
 		# flash[:notice] = "Friend Added!! #{friend.name} #{currUser.friends.size}"
 		redirect_to user_path session[:user_id]
+	end
+
+	def setMeeting
+		currUser_events  = User.find_by_id(params[:id]).events
+		otherUser_events = User.find_by_id(params[:friend_id]).events
+		@currDate = Time.now
+
+		today_events = []
+		free_time = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]
+		currUser_events.each { |x| 
+			if x.starttime.day == @currDate.day && x.endtime.day== @currDate.day
+				today_events << x
+			end
+		}
+		otherUser_events.each { |x| 
+			if x.starttime.day == @currDate.day && x.endtime.day == @currDate.day
+				today_events << x
+			end
+		}
+		# logger.debug("today_events")
+		# logger.debug(today_events)
+
+		today_events.each do |x|
+			# logger.debug("x")
+			# logger.debug(x.starttime)
+			((x.starttime.hour.to_i) .. (x.endtime.hour.to_i)).each do |i| 
+				logger.debug(i)
+				free_time[i] = false
+			end
+		end
+		@free_slots = []
+		for i in 0..23
+				if free_time[i] == true
+					@free_slots << i.to_s + ":00"
+				end
+		end
+		# logger.debug("free_time")
+		# logger.debug(free_time)
+
 	end
 end

@@ -9,7 +9,7 @@
 
 
 	%h2
-		= "User's Events:"
+		= "My Events:"
 		%br
 
 	%table#events
@@ -39,12 +39,12 @@
 	%br
 
 	%h2
-		= "User's Friends:"
+		= "My Friends:"
 	%table#events
 		%thead
 			%tr
 				%th Name
-				%th Set up a meeting
+				%th Find free slots on a given date
 		%tbody
 		- @friends.each do |friend|
 			%tr
@@ -54,10 +54,8 @@
 						= label(:curr_date, 'Date:')
 						= text_field_tag(:curr_date)
 						= submit_tag('Go!')
-
-
-	%br
 	%br
 	%br
 	= link_to 'Add New Friend',displayUsers_path
+	%br
 	%p.Logout= link_to 'Logout',logout_path

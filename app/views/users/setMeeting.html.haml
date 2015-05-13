@@ -5,8 +5,8 @@
 			%th Free Slots
 	%tbody
 		%tr
-			%td{:rowspan => "#{@free_slots.size}"}= @currDate
+			%td{:rowspan => "#{@free_slots_two.size + 1}"}= @currDate
 			%td
-				-@free_slots.each do |slot|
+				-@free_slots_two.each do |slot|
 					%tr
-						%td= slot 
+						%td= slot

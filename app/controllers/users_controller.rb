@@ -71,21 +71,40 @@ class UsersController < ApplicationController
 			end
 		}
 		#VFDJVJKDFJVKJDFJV
-		logger.debug("TODAYS EVENTS: ")
-		logger.debug(today_events)
+		# logger.debug("TODAYS EVENTS: ")
+		# logger.debug(today_events)
 		today_events.each do |x|
 			((x.starttime.hour.to_i) .. (x.endtime.hour.to_i)).each do |i| 
-				logger.debug("SEE THIS BITCHES")
-				logger.debug(i)
+				# logger.debug("SEE THIS BITCHES")
+				# logger.debug(i)
 				free_time[i] = false
 			end
 		end
 		@free_slots = []
 		for i in 0..23
 				if free_time[i] == true
-					@free_slots << i.to_s + ":00"
+					@free_slots << i
 				end
 		end
-
+		temp = ""
+		# logger.debug("FREE_SLOTSSS")
+		# logger.debug(@free_slots)
+		# logger.debug(@free_slots.size)
+		@free_slots_two = []
+		for i in 0..(@free_slots.size-1)
+			if i == 0
+				temp = @free_slots[i].to_s + ":00 - "
+			end
+			# logger.debug("@free_slots[i] + 1 :")
+			# logger.debug(@free_slots[i] + 1)
+			# logger.debug("@free_slots[i+1]  :")
+			# logger.debug(@free_slots[i+1])
+				
+			if @free_slots[i+1] != (@free_slots[i]+1)
+				temp = temp + @free_slots[i].to_s + ":00"
+				@free_slots_two << temp
+				temp = @free_slots[i+1].to_s + ":00 - "
+			end
+		end
 	end
 end

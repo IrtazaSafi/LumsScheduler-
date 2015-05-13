@@ -23,6 +23,8 @@ module NavigationHelpers
       '/users/1/events/new'
     when /^the Event details  page/
       'users/1/events/2'
+    when /^the display users page/
+      '/users/1/displayUsers'
     else
       begin
         page_name =~ /^the (.*) page$/

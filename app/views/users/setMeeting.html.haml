@@ -2,11 +2,11 @@
 	%thead
 		%tr
 			%th Date
-			%th Free slots
+			%th Free Slots
 	%tbody
-	- @free_slots.each do |slot|
 		%tr
-			%td= @currDate
-			%td=  slot
-
-= link_to 'Add New Event',new_user_event_path(params[:id])
+			%td{:rowspan => "#{@free_slots.size}"}= @currDate
+			%td
+				-@free_slots.each do |slot|
+					%tr
+						%td= slot 

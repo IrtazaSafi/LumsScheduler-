@@ -17,14 +17,13 @@ Background: events on user page
 
 Scenario: Add a friend (happy path)
 	And I follow "Add New Friend"
-	And I type in "Umaira Sajjad"
-	Then I should see "Umaira Sajjad" and "My Friends"
-Scenario: Friend doesn't exist (sad path)
+	Then I should be on the display users page
+	And I follow "Umaira Sajjad"
+	Then I should be on the user home page for "Usman Nadeem"
+	And I should see "Umaira Sajjad" and "User's Friends"
+Scenario: Cannot add oneself (sad path)
 	And I follow "Add New Friend"
-	And I type in "Zirak Zaheer"
-	Then I should see "User does not exist!
-Scenario: See free slots between my friend and mine
-	And I see "Umaira Sajjad" 
-	And I follow "Schedule a meeting"
-	Then I should be on the add meeting page
-	And I should not see "1st July"
+	Then I should be on the display users page
+	And I follow "Usman Nadeem"
+	Then I should be on the user home page for "Usman Nadeem"
+	And I should see "Cannot add Friend!"

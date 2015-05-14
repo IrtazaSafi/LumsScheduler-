@@ -31,13 +31,13 @@ class UsersController < ApplicationController
 		currUser = User.find_by_id(session[:user_id])
 		if temp.name == currUser.name
 			flash[:notice] = "Cannot add Friend!"
-			redirect_to user_path session[:user_id]
+			redirect_to displayUsers_path session[:user_id]
 			return
 		end
 		currUser.friends.each { |x| 
 			if x.name == temp.name
 				flash[:notice] = "Cannot add Friend!"
-				redirect_to user_path session[:user_id]
+				redirect_to displayUsers_path session[:user_id]
 				return
 			end
 		}
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 		
 		flash[:notice] = "Friend Added!! #{temp.name}"
 		# flash[:notice] = "Friend Added!! #{friend.name} #{currUser.friends.size}"
-		redirect_to user_path session[:user_id]
+		redirect_to displayUsers_path session[:user_id]
 	end
 
 	def setMeeting

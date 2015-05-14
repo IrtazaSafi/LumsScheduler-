@@ -44,7 +44,6 @@ class UsersController < ApplicationController
 		Friend.create!({:uid => temp.uid, :provider=>temp.provider, :name=>temp.name,:first_name=>temp.first_name,:last_name=>temp.last_name,:about=>temp.about,:gender=>temp.gender,:work=>temp.work,:email=>temp.email,:education=>temp.education,:user_id => session[:user_id]});
 		
 		flash[:notice] = "Friend Added!! #{temp.name}"
-		# flash[:notice] = "Friend Added!! #{friend.name} #{currUser.friends.size}"
 		redirect_to displayUsers_path session[:user_id]
 	end
 

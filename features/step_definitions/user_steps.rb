@@ -9,6 +9,12 @@ Given /the following users exist/ do |user_table|
 			:description => "25th January")
 	end
 end
+
+Given /the following friends exist/ do |user_table|
+	user_table.hashes.each do |temp|
+		Friend.create temp
+	end
+end
 And /the following events exist/ do |events_table|
 	events_table.hashes.each do |event|
 		Event.create event

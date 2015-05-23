@@ -1,0 +1,12 @@
+%center
+	%h1
+		="Find Free Slots on a Given Date"
+		%br
+		%br
+		="Date Input Format:  day-month-year i.e 12-05-2015"
+
+
+	= form_tag set_up_a_meeting_path(params[:id],params[:friend_id]), :method => :get do
+		= label(:curr_date, 'Date:')
+		= text_field_tag(:curr_date)
+		= submit_tag('Go!')

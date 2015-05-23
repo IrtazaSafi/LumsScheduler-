@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'users/:name/addFriend' => 'users#addFriend',:as=> :addFriend
   get 'users/:id/setMeeting/:friend_id' => 'users#setMeeting',:as=> :set_up_a_meeting
 
+  get 'users/:id/showFriend/:friend_id' => 'users#showFriend',:as=> :showFriend
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

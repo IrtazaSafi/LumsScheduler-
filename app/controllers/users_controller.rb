@@ -47,9 +47,14 @@ class UsersController < ApplicationController
 		redirect_to user_path session[:user_id]
 	end
 
+	def showFriend
+
+
+	end
+
 	def setMeeting
 		currUser_events  = User.find_by_id(params[:id]).events
-		otherUser_events = User.find_by_id(params[:friend_id]).events
+		otherUser_events = User.find_by_name(params[:friend_id]).events
 		curDate = params[:curr_date]
 
 		year = curDate[6] + curDate[7] + curDate[8]+ curDate[9]

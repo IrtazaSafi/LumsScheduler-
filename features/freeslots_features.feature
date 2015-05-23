@@ -8,12 +8,20 @@ Background: events on user page
 		| name | uid |
 		| Usman Nadeem | 1 |
 		| Umaira Sajjad | 2 |
+		| Irtaza Safi | 3 |
+
+
+	Given the following friends exist:
+		| name | uid |user_id|
+		| Usman Nadeem | 1 |3|
+		| Irtaza Safi | 2|1|
+
 
 	And I am on the user home page for "Usman Nadeem"
 	And the following events exist:
-	 	| title            | description  | ownerid |
-	 	| Zirak's Birthday | 1st July     | 1       |
-	 	| My birthday      | 25th January | 1       |
+	 	| title            | description  | ownerid | starttime | endtime|
+	 	| Zirak's Birthday | 1st July     | 1       | 2015-02-03 12:08:00 UTC	|2015-02-03 13:08:00 UTC	|
+	 	| My birthday      | 25th January | 1       |2015-02-03 12:08:00 UTC	|2015-02-03 13:08:00 UTC	|
 
 Scenario: Add a friend (happy path)
 	And I follow "Add New Friend"
@@ -27,3 +35,8 @@ Scenario: Cannot add oneself (sad path)
 	When I follow "Usman Nadeem" whereby the logged in user is "Usman Nadeem"
 	Then I should see "Cannot add Friend!" on the screen
 Scenario: Find free slots (happy path)
+	Given I am on the user home page for "Irtaza Safi"
+	And I fill in "Date:" with "12-05-2015"
+	Then I should be on the free slots page
+	And I should see "0:00 - 23:00"
+

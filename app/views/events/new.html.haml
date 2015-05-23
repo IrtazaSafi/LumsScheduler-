@@ -1,5 +1,5 @@
 %center
-	= form_tag user_events_path ,:method =>:post do
+	= form_tag user_events_path(session[:user_id] ,session[:user_id] ),:method =>:post do
 		= label :event, :title, 'Title'
 		= text_field :event, 'title'
 		%br

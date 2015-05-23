@@ -33,27 +33,25 @@
 				%td= event.status
 				%td= event.description
 
-	= link_to 'Add New Event',new_user_event_path(params[:id])
+	= link_to 'Add New Event',new_user_event_path(params[:id],nil)
 	%br
 	%br
 	%br
 
 	%h2
 		= "My Friends:"
-	%table#events
-		%thead
-			%tr
-				%th Name
-				%th Find free slots on a given date
-		%tbody
-		- @friends.each do |friend|
-			%tr
-				%td=  friend.name
-				%td
-					= form_tag set_up_a_meeting_path(params[:id],friend.id), :method => :get do
-						= label(:curr_date, 'Date:')
-						= text_field_tag(:curr_date)
-						= submit_tag('Go!')
+	%center
+		%table#events
+			%thead
+				%tr
+					%th Name
+			%tbody
+			- @friends.each do |friend|
+				%tr
+					%td=  link_to friend.name,showFriend_path(params[:id],friend.name)
+				
+					
+			
 	%br
 	%br
 	= link_to 'Add New Friend',displayUsers_path

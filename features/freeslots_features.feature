@@ -40,6 +40,6 @@ Scenario: Find free slots (happy path)
 	Then I should be on the find free slots page
 	When I fill in "curr_date" with "12-05-2015"
 	And I follow 'Go!'
-	Then I should be on the free slots page
+	Then I should be on the view free slots page
 	And I should see "0:00 - 23:00"
 

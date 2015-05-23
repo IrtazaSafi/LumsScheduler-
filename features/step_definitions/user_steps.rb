@@ -47,6 +47,7 @@ Then(/^I should see "(.*?)" on my screen$/) do |arg1|
 end
 
 When(/^I follow 'Go!'$/) do
+  click_button('Go!')
   #pending # express the regexp above with the code you wish you had
 end
 

@@ -27,6 +27,10 @@ module NavigationHelpers
       'users/1/events/2'
     when /^the display users page/
       '/users/1/displayUsers'
+    when /^the find free slots page/
+      '/users/3/showFriend/Usman%20Nadeem'
+    when /^the free slots page/
+      '/users/3/showFriend/Usman%20Nadeem'
     else
       begin
         page_name =~ /^the (.*) page$/

@@ -45,3 +45,8 @@ end
 Then(/^I should see "(.*?)" on my screen$/) do |arg1|
   arg1 = "Friend Added!!"
 end
+
+When(/^I follow 'Go!'$/) do
+  #pending # express the regexp above with the code you wish you had
+end
+

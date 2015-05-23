@@ -36,7 +36,10 @@ Scenario: Cannot add oneself (sad path)
 	Then I should see "Cannot add Friend!" on the screen
 Scenario: Find free slots (happy path)
 	Given I am on the user home page for "Irtaza Safi"
-	And I fill in "Date:" with "12-05-2015"
+	And I follow "Usman Nadeem"
+	Then I should be on the find free slots page
+	When I fill in "curr_date" with "12-05-2015"
+	And I follow 'Go!'
 	Then I should be on the free slots page
 	And I should see "0:00 - 23:00"
 

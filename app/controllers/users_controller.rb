@@ -31,7 +31,8 @@ class UsersController < ApplicationController
 		# 	:user_id => params[:id]});
 		
 		data_of_friend = Friend.getHash (params[:name])
-		Friend.create!(data_of_friend, {:user_id => params[:id]})
+		data_of_friend[:user_id] = params[:id]
+		Friend.create!(data_of_friend)
 		flash[:notice] = "Friend Added!! #{params[:name]}"
 		redirect_to user_path params[:id]
 	end

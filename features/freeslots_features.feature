@@ -18,8 +18,8 @@ Background: events on user page
 	 	| Exam           	  | 25th January   | 1       | 2015-01-25 08:00:00 UTC | 2015-01-25 11:00:00 UTC |
 
 	And the following friends exist
-		| name          | uid |
-		| Irtaza Safi   | 3   |
+		| name          | uid |user_id|
+		| Irtaza Safi | 2|1|
  	
 Scenario: Add a friend (happy path)
 	And I follow "Add New Friend"
@@ -33,9 +33,10 @@ Scenario: Cannot add oneself (sad path)
 	When I follow "Usman Nadeem" whereby the logged in user is "Usman Nadeem"
 	Then I should see "Cannot add Friend!" on the screen
 Scenario: Find free slots (happy path)
+	Given I am on the user home page for "Usman Nadeem"
 	And I follow "Irtaza Safi"
 	Then I should be on the find free slots page
-	When I fill in "Date" with "23-05-2015"
+	When I fill in "curr_date" with "23-05-2015"
 	And I follow 'Go!'
 	Then I should be on the view free slots page
 	And I should see "0:00 - 23:00"

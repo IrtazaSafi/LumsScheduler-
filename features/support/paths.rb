@@ -28,9 +28,11 @@ module NavigationHelpers
     when /^the display users page/
       '/users/1/displayUsers'
     when /^the find free slots page/
-      '/users/3/showFriend/Usman%20Nadeem'
+      '/users/1/showFriend/Irtaza%20Safi'
+       #'/users/3/showFriend/Usman%20Nadeem'
     when /^the view free slots page/
-      '/users/3/setMeeting/Usman%20Nadeem'
+      '/users/1/setMeeting/Irtaza%20Safi'
+      #'/users/3/setMeeting/Usman%20Nadeem'
       
     else
       begin

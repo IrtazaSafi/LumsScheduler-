@@ -71,6 +71,8 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.5.2)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     gherkin (2.12.2)
@@ -213,6 +215,7 @@ DEPENDENCIES
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
+  factory_girl
   haml
   jbuilder (~> 2.0)
   jquery-rails

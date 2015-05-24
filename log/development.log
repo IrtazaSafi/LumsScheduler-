@@ -8768,3 +8768,1854 @@ Processing by UsersController#show as HTML
   [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
   Rendered users/show.html.haml within layouts/application (5.9ms)
 Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:14:54 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:14:54 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 25ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-24 17:14:55 +0500
+Processing by SessionsController#login as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered sessions/login.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 698ms (Views: 690.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 17:14:58 +0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 17:14:58 +0500
+
+
+Started GET "/auth/facebook/callback?code=AQBk69SkZ7RrVSd8u9nMx3AyQbbthL7vQcVRMDPN74kIVxRO_FP-3sW6lZOldERH7V6M5Es5auE5noKQp0sWj3C9iPGfGp5jukoX8jRGXuVhB0UYsF1mAhfRZFBmn5JNsBbxYJpP220cFo6pxf1ZL9VLqHYmfamnV8iTRidihi4YIOXbeioF3a9IwPDaByduHHCebWFPoCppt3IDVm2LU6WnYcPLE6s5eQnv9FNsXmr1emgqQw25GJbXhIU26KOGmkKM_DPo86k86o--o9rb6KwUjXlL2QeBP8XDsYwqLl0HTb24DPnRo3uD3PzvBzjU2uI&state=9787dd1fabfdcde68ae9195ebcd1d6e9068524a0d7e0fb73" for 127.0.0.1 at 2015-05-24 17:15:00 +0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBk69SkZ7RrVSd8u9nMx3AyQbbthL7vQcVRMDPN74kIVxRO_FP-3sW6lZOldERH7V6M5Es5auE5noKQp0sWj3C9iPGfGp5jukoX8jRGXuVhB0UYsF1mAhfRZFBmn5JNsBbxYJpP220cFo6pxf1ZL9VLqHYmfamnV8iTRidihi4YIOXbeioF3a9IwPDaByduHHCebWFPoCppt3IDVm2LU6WnYcPLE6s5eQnv9FNsXmr1emgqQw25GJbXhIU26KOGmkKM_DPo86k86o--o9rb6KwUjXlL2QeBP8XDsYwqLl0HTb24DPnRo3uD3PzvBzjU2uI", "state"=>"9787dd1fabfdcde68ae9195ebcd1d6e9068524a0d7e0fb73", "provider"=>"facebook"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? LIMIT 1[0m  [["provider", "facebook"], ["uid", "10205169114962045"]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 30ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:15:04 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (9.5ms)
+Completed 200 OK in 74ms (Views: 46.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/23" for 127.0.0.1 at 2015-05-24 17:15:08 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 23]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:15:08 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 48ms (Views: 42.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:15:13 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:15:13 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 77ms (Views: 74.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-05-24 17:15:21 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (46.0ms)
+Completed 200 OK in 97ms (Views: 83.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/0" for 127.0.0.1 at 2015-05-24 17:15:24 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"0"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 0]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:15:24 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 2]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 41.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-05-24 17:15:47 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (19.1ms)
+Completed 200 OK in 75ms (Views: 68.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/1/showFriend/Usman%20Nadeem" for 127.0.0.1 at 2015-05-24 17:16:07 +0500
+Processing by UsersController#showFriend as HTML
+  Parameters: {"id"=>"1", "friend_id"=>"Usman Nadeem"}
+  Rendered users/showFriend.html.haml within layouts/application (12.9ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-05-24 17:16:10 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (29.6ms)
+Completed 200 OK in 101ms (Views: 98.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/showFriend/Usman%20Nadeem" for 127.0.0.1 at 2015-05-24 17:16:13 +0500
+Processing by UsersController#showFriend as HTML
+  Parameters: {"id"=>"1", "friend_id"=>"Usman Nadeem"}
+  Rendered users/showFriend.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-05-24 17:16:20 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 108ms (Views: 101.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-05-24 17:16:20 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (10.5ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-05-24 17:16:20 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (1.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 55ms (Views: 45.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:17:09 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:17:09 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:17:09 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 2]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 77ms (Views: 42.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/2/displayUsers" for 127.0.0.1 at 2015-05-24 17:18:53 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (12.0ms)
+Completed 200 OK in 41ms (Views: 35.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:19:04 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 2]]
+  [1m[36mFriend Load (0.4ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 81ms (Views: 69.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/2/displayUsers" for 127.0.0.1 at 2015-05-24 17:19:06 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/Irtaza%20Safi/addFriend" for 127.0.0.1 at 2015-05-24 17:19:08 +0500
+Processing by UsersController#addFriend as HTML
+  Parameters: {"name"=>"Irtaza Safi"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friends" ("uid", "provider", "name", "first_name", "last_name", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "10153298211173086"], ["provider", "facebook"], ["name", "Irtaza Safi"], ["first_name", "Irtaza"], ["last_name", "Safi"], ["email", "irtaza_safi@hotmail.com"], ["user_id", 2], ["created_at", "2015-05-24 12:19:08.044814"], ["updated_at", "2015-05-24 12:19:08.044814"]]
+  [1m[35m (11.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 33ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:19:08 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 2]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/displayUsers" for 127.0.0.1 at 2015-05-24 17:21:10 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 39ms (Views: 33.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:28:55 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 2]]
+  [1m[36mFriend Load (1.4ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (29.5ms)
+Completed 200 OK in 162ms (Views: 111.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:28:55 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:28:56 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 2]]
+  [1m[36mFriend Load (0.3ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 36ms (Views: 29.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:28:56 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (8.3ms)
+Completed 200 OK in 64ms (Views: 58.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:28:56 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 2]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 61ms (Views: 53.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:28:57 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 2]]
+  Rendered users/show.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 52ms (Views: 50.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/displayUsers" for 127.0.0.1 at 2015-05-24 17:29:00 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+  [1m[36mSQL (11.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = 2[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" IS NULL
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/displayUsers.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 39ms (Views: 23.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:29:03 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `events' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `show'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:29:03 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `events' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `show'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.5ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.4ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:29:17 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:29:17 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 17:29:17 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `events' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `show'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.8ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-05-24 17:29:39 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (19.2ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:33:34 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:33:34 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-24 17:33:35 +0500
+Processing by SessionsController#login as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered sessions/login.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 77ms (Views: 72.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 17:33:35 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 17:33:35 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 17:33:35 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 17:33:35 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 17:33:35 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 17:33:35 +0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 17:33:39 +0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 17:33:39 +0500
+
+
+Started GET "/auth/facebook/callback?code=AQAMNU-cgtfj-g3g4S_QTfdsAVNxlfGKMIorH7iNHKRjnkdleVHB6UcH8J1kTmYue15TTUWdQQ6jicMd-HMlVYdwcGIpN9CuTFbLGaLDLlFrkWzcc668wfwGYachQXazIybqmvCzRxv-QUbYGaO9G3bIjc9-DoqSpQb1x6hj8dOJBOw4cyUGig8klESZOoZbEZxwBW-uPoXzn-OWpPLKq61OQ6dYVNiRBz8mhq1hDe0FRSwDqPxAxRi3-zXggBtDHdMfjIax3syZmm8ZpG3VpEQjPe_qyOI99GfGKdp5Atnh3poqRW7hfJ0Kc6Tj2yBVthA&state=1035776017a2081f1bbda6c6954612c339c31cd07a977e25" for 127.0.0.1 at 2015-05-24 17:33:52 +0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAMNU-cgtfj-g3g4S_QTfdsAVNxlfGKMIorH7iNHKRjnkdleVHB6UcH8J1kTmYue15TTUWdQQ6jicMd-HMlVYdwcGIpN9CuTFbLGaLDLlFrkWzcc668wfwGYachQXazIybqmvCzRxv-QUbYGaO9G3bIjc9-DoqSpQb1x6hj8dOJBOw4cyUGig8klESZOoZbEZxwBW-uPoXzn-OWpPLKq61OQ6dYVNiRBz8mhq1hDe0FRSwDqPxAxRi3-zXggBtDHdMfjIax3syZmm8ZpG3VpEQjPe_qyOI99GfGKdp5Atnh3poqRW7hfJ0Kc6Tj2yBVthA", "state"=>"1035776017a2081f1bbda6c6954612c339c31cd07a977e25", "provider"=>"facebook"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? LIMIT 1[0m  [["provider", "facebook"], ["uid", "10205169114962045"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "first_name", "last_name", "gender", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "10205169114962045"], ["name", "Usman Nadeem"], ["first_name", "Usman"], ["last_name", "Nadeem"], ["gender", "male"], ["email", "usmanone@gmail.com"], ["created_at", "2015-05-24 12:33:56.503895"], ["updated_at", "2015-05-24 12:33:56.503895"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 27ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-05-24 17:33:56 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 4]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered users/show.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4/displayUsers" for 127.0.0.1 at 2015-05-24 17:34:03 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+  [1m[35mSQL (10.5ms)[0m  DELETE FROM "users" WHERE "users"."id" = 4
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" IS NULL[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 38ms (Views: 23.8ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:34:13 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:34:13 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-05-24 17:34:13 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `events' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `show'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.0ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+Processing by SessionsController#login as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered sessions/login.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 35ms (Views: 27.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 17:34:30 +0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 17:34:32 +0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 17:34:32 +0500
+
+
+Started GET "/auth/facebook/callback?code=AQBYVUawMJllSV-Wa5uviwkNi_lipUePEKGA8vZKs7B8OGJ6AtiEEvgJE7ULip8ZQl8bK3xRVTeCUsRb99wu4icmUV3GctmXpjczELErin27f57E-nyBxS3352v0_jy7kuGH30s9JcsMNT35Q9_a9iAGrFbvVTT09YkeEYcHVF_UV6sD20LeBftgNwtfyQNqU8leGC9BguApBNmeaEzFt5AkVroz4qD2t_y97jUNNhxhCGquMUdAci2TDjg_dbqC6ixrJk98oSSoH5maGzs8QvLroiA1YmEbWlHkl2jPtRmTxcGLO14qPXvT5nA6ZRUTRl4&state=82698475e603f09b5aae3312b554587cafde943e79540eae" for 127.0.0.1 at 2015-05-24 17:34:46 +0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBYVUawMJllSV-Wa5uviwkNi_lipUePEKGA8vZKs7B8OGJ6AtiEEvgJE7ULip8ZQl8bK3xRVTeCUsRb99wu4icmUV3GctmXpjczELErin27f57E-nyBxS3352v0_jy7kuGH30s9JcsMNT35Q9_a9iAGrFbvVTT09YkeEYcHVF_UV6sD20LeBftgNwtfyQNqU8leGC9BguApBNmeaEzFt5AkVroz4qD2t_y97jUNNhxhCGquMUdAci2TDjg_dbqC6ixrJk98oSSoH5maGzs8QvLroiA1YmEbWlHkl2jPtRmTxcGLO14qPXvT5nA6ZRUTRl4", "state"=>"82698475e603f09b5aae3312b554587cafde943e79540eae", "provider"=>"facebook"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? LIMIT 1[0m  [["provider", "facebook"], ["uid", "10205169114962045"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("provider", "uid", "name", "first_name", "last_name", "gender", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "10205169114962045"], ["name", "Usman Nadeem"], ["first_name", "Usman"], ["last_name", "Nadeem"], ["gender", "male"], ["email", "usmanone@gmail.com"], ["created_at", "2015-05-24 12:34:50.348524"], ["updated_at", "2015-05-24 12:34:50.348524"]]
+  [1m[35m (47.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 74ms (ActiveRecord: 49.3ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:34:50 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 67ms (Views: 51.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:34:52 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Completed 500 Internal Server Error in 4ms
+
+TypeError (can't convert User to Array (User#to_ary gives NilClass)):
+  app/controllers/users_controller.rb:24:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.0ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:34:52 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Completed 500 Internal Server Error in 3ms
+
+TypeError (can't convert User to Array (User#to_ary gives NilClass)):
+  app/controllers/users_controller.rb:24:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:36:24 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:36:24 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:36:24 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (1.6ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 85ms (Views: 57.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:36:28 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `add' for []:Array):
+  app/controllers/users_controller.rb:21:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.3ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:36:28 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `add' for []:Array):
+  app/controllers/users_controller.rb:21:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.3ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:37:13 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:37:24 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 15ms
+
+NameError (undefined local variable or method `currUser' for #<UsersController:0xbb134258>):
+  app/controllers/users_controller.rb:22:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.0ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:37:25 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 4ms
+
+NameError (undefined local variable or method `currUser' for #<UsersController:0xb34d93c0>):
+  app/controllers/users_controller.rb:22:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.5ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:38:14 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:38:14 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:38:14 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (1.7ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (1.7ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (14.0ms)
+Completed 200 OK in 97ms (Views: 52.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:38:16 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/displayUsers.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 29.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:39:01 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (36.4ms)
+Completed 200 OK in 210ms (Views: 128.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:39:04 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+#<User::ActiveRecord_Relation:0xb4eb2300>
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+[#<User id: 1, name: "Irtaza Safi", provider: "facebook", uid: "10153298211173086", created_at: "2015-05-11 15:44:31", updated_at: "2015-05-11 15:44:31", first_name: "Irtaza", last_name: "Safi", about: nil, gender: nil, work: nil, email: "irtaza_safi@hotmail.com", education: nil>, #<User id: 3, name: "Syed Ali Safi", provider: "facebook", uid: "370291886497919", created_at: "2015-05-23 05:02:56", updated_at: "2015-05-23 05:02:56", first_name: "Syed", last_name: "Safi", about: nil, gender: "male", work: nil, email: "alisafi99@gmail.com", education: nil>, #<User id: 5, name: "Usman Nadeem", provider: "facebook", uid: "10205169114962045", created_at: "2015-05-24 12:34:50", updated_at: "2015-05-24 12:34:50", first_name: "Usman", last_name: "Nadeem", about: nil, gender: "male", work: nil, email: "usmanone@gmail.com", education: nil>]
+  Rendered users/displayUsers.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 24.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:39:44 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.4ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 108ms (Views: 63.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:39:44 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (20.2ms)
+Completed 200 OK in 68ms (Views: 65.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:39:44 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:39:45 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+
+
+
+
+#<User::ActiveRecord_Relation:0xbb7fa0d8>
+
+
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+[#<User id: 1, name: "Irtaza Safi", provider: "facebook", uid: "10153298211173086", created_at: "2015-05-11 15:44:31", updated_at: "2015-05-11 15:44:31", first_name: "Irtaza", last_name: "Safi", about: nil, gender: nil, work: nil, email: "irtaza_safi@hotmail.com", education: nil>, #<User id: 3, name: "Syed Ali Safi", provider: "facebook", uid: "370291886497919", created_at: "2015-05-23 05:02:56", updated_at: "2015-05-23 05:02:56", first_name: "Syed", last_name: "Safi", about: nil, gender: "male", work: nil, email: "alisafi99@gmail.com", education: nil>, #<User id: 5, name: "Usman Nadeem", provider: "facebook", uid: "10205169114962045", created_at: "2015-05-24 12:34:50", updated_at: "2015-05-24 12:34:50", first_name: "Usman", last_name: "Nadeem", about: nil, gender: "male", work: nil, email: "usmanone@gmail.com", education: nil>]
+
+
+
+
+  Rendered users/displayUsers.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 30.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:40:27 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+
+
+
+
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+#<Enumerator:0xb39f90d0>
+
+
+
+
+#<Enumerator:0xb39f8d24>
+
+
+
+
+  Rendered users/displayUsers.html.haml within layouts/application (10.3ms)
+Completed 200 OK in 85ms (Views: 45.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:40:41 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+
+
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+#<Enumerator:0xb4c3c878>
+
+
+
+
+#<Enumerator:0xb4c3c4cc>
+
+
+
+
+  Rendered users/displayUsers.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 72ms (Views: 64.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:41:08 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+
+
+
+ ******Users = 
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+#<Enumerator:0xb4362068>
+
+
+
+
+#<Enumerator:0xb4361cbc>
+
+
+
+
+  Rendered users/displayUsers.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 84ms (Views: 43.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:41:51 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 27ms
+
+TypeError (can't convert User to Array (User#to_ary gives NilClass)):
+  app/controllers/users_controller.rb:22:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.3ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:42:09 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+Completed 500 Internal Server Error in 25ms
+
+TypeError (no implicit conversion of nil into Array):
+  app/controllers/users_controller.rb:23:in `+'
+  app/controllers/users_controller.rb:23:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.4ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.6ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:42:22 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+
+
+
+ ******Users = 
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+#<Enumerator:0xb4396908>
+
+
+
+
+#<Enumerator:0xb439655c>
+
+
+
+
+  Rendered users/displayUsers.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 44.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 17:42:22 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 17:42:22 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 17:42:22 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 17:42:22 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 17:42:22 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 17:42:22 +0500
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:42:54 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+
+
+
+ ******Users = 
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+#<Enumerator:0xb5ca1efc>
+
+
+
+
+#<Enumerator:0xb5ca113c>
+
+
+
+
+  Rendered users/displayUsers.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 66ms (Views: 43.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:44:08 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+
+
+
+ 
+******Users = 
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+#<Enumerator:0xbb85e63c>
+******Users = 
+#<Enumerator:0xbb85e04c>
+
+****************************************************
+  Rendered users/displayUsers.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 65ms (Views: 38.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 17:44:08 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 17:44:08 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 17:44:08 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 17:44:08 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 17:44:08 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 17:44:08 +0500
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:45:58 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+Completed 500 Internal Server Error in 21ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/users_controller.rb:23:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.5ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:47:36 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/users_controller.rb:23:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 17:49:37 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 17:49:37 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:49:37 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.6ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 103ms (Views: 54.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:49:40 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+
+
+
+ 
+******Users = 
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+#<Enumerator:0xb3109fd8>
+******Users = 
+#<Enumerator:0xb3109c04>
+
+****************************************************
+  Rendered users/displayUsers.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/Irtaza%20Safi/addFriend" for 127.0.0.1 at 2015-05-24 17:49:45 +0500
+Processing by UsersController#addFriend as HTML
+  Parameters: {"name"=>"Irtaza Safi"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "friends" ("uid", "provider", "name", "first_name", "last_name", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["uid", "10153298211173086"], ["provider", "facebook"], ["name", "Irtaza Safi"], ["first_name", "Irtaza"], ["last_name", "Safi"], ["email", "irtaza_safi@hotmail.com"], ["user_id", 5], ["created_at", "2015-05-24 12:49:45.110491"], ["updated_at", "2015-05-24 12:49:45.110491"]]
+  [1m[35m (44.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 62ms (ActiveRecord: 45.5ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:49:45 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:49:47 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+
+
+
+ 
+******Users = 
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+#<Enumerator:0xb33dfd5c>
+******Users = 
+#<Enumerator:0xb33df94c>
+
+****************************************************
+  Rendered users/displayUsers.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 27.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:49:49 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:49:49 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 53ms (Views: 42.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:49:49 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 17:49:52 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (10.1ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:49:54 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+
+
+
+ 
+******Users = 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+#<Enumerator:0xbb8506cc>
+******Users = 
+#<Enumerator:0xbb850294>
+
+****************************************************
+  Rendered users/displayUsers.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:50:16 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+
+
+
+ 
+******Users = 
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+#<Enumerator:0xbb2bcbac>
+******Users = 
+#<Enumerator:0xbb2bc4cc>
+
+****************************************************
+  Rendered users/displayUsers.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 47ms (Views: 40.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:51:53 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+
+
+
+****************************************************
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+****************************************************
+  Rendered users/displayUsers.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 68ms (Views: 34.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 17:51:53 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 17:51:53 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 17:51:54 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 17:51:54 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 17:51:54 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 17:51:54 +0500
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:53:16 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+
+
+
+****************************************************
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+
+****************************************************
+  Rendered users/displayUsers.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 64ms (Views: 42.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 17:53:16 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:16 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:16 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:16 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:16 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:16 +0500
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:53:54 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+
+
+
+****************************************************
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Friend"]]
+===================== Friends not nil
+
+****************************************************
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/displayUsers.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 77ms (Views: 52.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 17:53:54 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:54 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:54 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:54 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:54 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 17:53:54 +0500
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:55:15 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+
+
+
+****************************************************
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Friend"]]
+
+****************************************************
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 70ms (Views: 36.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:56:11 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+
+
+
+****************************************************
+Completed 500 Internal Server Error in 25ms
+
+ActiveRecord::StatementInvalid (can't cast Friend::ActiveRecord_Associations_CollectionProxy to string):
+  app/controllers/users_controller.rb:23:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.2ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:56:22 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+
+
+
+****************************************************
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 41ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=#<Friend::ActiveRecord_Associations_CollectionProxy:0xb5a05464>):
+  app/controllers/users_controller.rb:23:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.0ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:57:36 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+
+
+
+****************************************************
+Completed 500 Internal Server Error in 35ms
+
+NoMethodError (undefined method `find_by_friend' for #<Class:0xbae3e7d8>):
+  app/controllers/users_controller.rb:23:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.2ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 17:57:42 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+
+
+
+****************************************************
+Completed 500 Internal Server Error in 28ms
+
+NoMethodError (undefined method `find_by_friends' for #<Class:0xb4465b2c>):
+  app/controllers/users_controller.rb:23:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.5ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 18:06:57 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 18:06:57 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:06:57 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (16.8ms)
+Completed 200 OK in 95ms (Views: 61.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 18:07:01 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `notYetFriends' for #<Class:0xb42534b0>):
+  app/controllers/users_controller.rb:21:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.4ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 18:07:01 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `notYetFriends' for #<Class:0xb42534b0>):
+  app/controllers/users_controller.rb:21:in `displayUsers'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.3ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 18:07:24 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 111ms (Views: 45.0ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 18:07:24 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 18:07:24 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 18:07:24 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 18:07:24 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 18:07:24 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 18:07:24 +0500
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-05-24 18:07:33 +0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/start
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 18:07:33 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-24 18:07:33 +0500
+Processing by SessionsController#login as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered sessions/login.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 18:07:34 +0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 18:07:35 +0500
+
+
+Started GET "/auth/facebook/callback?code=AQA-GPBN73oqPl0ewr6qukB2wiaskLAU6KzmatnOYUHOVG9uBbZpn_3cjB6lfp00n3BFbzXeAtMUV2VIoXcOJ6ZHqoRkeno7jMxz5GpKOLQ1igYQ2zIbXeb2RifliL30W2bX7DuMCe2KeK_EY9vG3yUDwmg4Dw-7Bp7QCJtfYmwhWdkvR3FCDBmL1t974vm1ZXI5sbmXgm9RPU4P2jnqRFQo8mytJcKBc4qqmIhoJDHlSSIMSggF0Pfnk6wKv_QOAZn2YARwFeRhJxqIBzK_uvznIYYUPUV6jAlCMKhjo1ObVhg4PYrOVH91hLYRx7wUW5Y&state=2fff9ddfe87f35706ebdbe8e0ba1277282735cc253d9a600" for 127.0.0.1 at 2015-05-24 18:07:36 +0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQA-GPBN73oqPl0ewr6qukB2wiaskLAU6KzmatnOYUHOVG9uBbZpn_3cjB6lfp00n3BFbzXeAtMUV2VIoXcOJ6ZHqoRkeno7jMxz5GpKOLQ1igYQ2zIbXeb2RifliL30W2bX7DuMCe2KeK_EY9vG3yUDwmg4Dw-7Bp7QCJtfYmwhWdkvR3FCDBmL1t974vm1ZXI5sbmXgm9RPU4P2jnqRFQo8mytJcKBc4qqmIhoJDHlSSIMSggF0Pfnk6wKv_QOAZn2YARwFeRhJxqIBzK_uvznIYYUPUV6jAlCMKhjo1ObVhg4PYrOVH91hLYRx7wUW5Y", "state"=>"2fff9ddfe87f35706ebdbe8e0ba1277282735cc253d9a600", "provider"=>"facebook"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? LIMIT 1  [["provider", "facebook"], ["uid", "10205169114962045"]]
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:07:40 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 18:07:42 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Irtaza Safi"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/displayUsers.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 37.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/Syed%20Ali%20Safi/addFriend" for 127.0.0.1 at 2015-05-24 18:07:44 +0500
+Processing by UsersController#addFriend as HTML
+  Parameters: {"name"=>"Syed Ali Safi"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Syed Ali Safi"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "friends" ("uid", "provider", "name", "first_name", "last_name", "gender", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["uid", "370291886497919"], ["provider", "facebook"], ["name", "Syed Ali Safi"], ["first_name", "Syed"], ["last_name", "Safi"], ["gender", "male"], ["email", "alisafi99@gmail.com"], ["user_id", 5], ["created_at", "2015-05-24 13:07:44.757904"], ["updated_at", "2015-05-24 13:07:44.757904"]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 22ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:07:44 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 18:07:47 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Syed Ali Safi"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/displayUsers.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 32ms (Views: 27.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:07:49 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:07:49 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:07:49 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (24.1ms)
+Completed 200 OK in 64ms (Views: 60.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:07:50 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (1.5ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (6.2ms)
+Completed 200 OK in 54ms (Views: 48.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:08:31 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (5.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (12.8ms)
+Completed 200 OK in 98ms (Views: 58.9ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 18:08:31 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 18:08:31 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 18:08:31 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 18:08:31 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 18:08:31 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 18:08:31 +0500
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 18:08:33 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Syed Ali Safi"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/displayUsers.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:08:35 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 18:19:35 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 18:19:36 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-05-24 18:19:36 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `events' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `show'
+
+
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/usman/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+Processing by SessionsController#login as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered sessions/login.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 69ms (Views: 66.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 18:19:45 +0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 18:19:48 +0500
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-05-24 18:19:48 +0500
+
+
+Started GET "/auth/facebook/callback?code=AQAFc5VANACbCHWK28E22rBEos5RDaOB6RqAP1raVaosfVCxHw-mlHhmYe7WsGgel9T2NaUXs4czVwFCbIqYueqRU4Xkczbe7rG6vHfNTiCWEhf-KaiH-1-8mA3xgSV-DlWDToSQCVrXSS8Fa9ry424FB0pF1LMM9-O6WVMBXirtsjYii-ej1SurUZLXz26GwUpTW0RkP-L5N3MNE9GmLXt1DLjcI2L77tVBeR9yIiJO4zQV_V9MWX-gUXpRE8tIOABOvH_UOpNvq_YZ3TE4-NIq2oTJtvG4rZHWPd_py9xZVwR0hKh0vJkyJ-e4jm5HQ1g&state=4ceebeff03ad694f16b3c907a0ba11e2ebeadfc7bb5c89d6" for 127.0.0.1 at 2015-05-24 18:20:00 +0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAFc5VANACbCHWK28E22rBEos5RDaOB6RqAP1raVaosfVCxHw-mlHhmYe7WsGgel9T2NaUXs4czVwFCbIqYueqRU4Xkczbe7rG6vHfNTiCWEhf-KaiH-1-8mA3xgSV-DlWDToSQCVrXSS8Fa9ry424FB0pF1LMM9-O6WVMBXirtsjYii-ej1SurUZLXz26GwUpTW0RkP-L5N3MNE9GmLXt1DLjcI2L77tVBeR9yIiJO4zQV_V9MWX-gUXpRE8tIOABOvH_UOpNvq_YZ3TE4-NIq2oTJtvG4rZHWPd_py9xZVwR0hKh0vJkyJ-e4jm5HQ1g", "state"=>"4ceebeff03ad694f16b3c907a0ba11e2ebeadfc7bb5c89d6", "provider"=>"facebook"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? LIMIT 1[0m  [["provider", "facebook"], ["uid", "10205169114962045"]]
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:20:04 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (8.5ms)
+Completed 200 OK in 52ms (Views: 44.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/5/showFriend/Syed%20Ali%20Safi" for 127.0.0.1 at 2015-05-24 18:20:11 +0500
+Processing by UsersController#showFriend as HTML
+  Parameters: {"id"=>"5", "friend_id"=>"Syed Ali Safi"}
+  Rendered users/showFriend.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 18:20:15 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5/displayUsers" for 127.0.0.1 at 2015-05-24 18:20:19 +0500
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Irtaza Safi"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Syed Ali Safi"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 29.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+Processing by SessionsController#login as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered sessions/login.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 99ms (Views: 92.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-8b590e7eb348261d26debc46be59f31e401f41390d6c000ec59e97d1cbde71e8.css?body=1" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-05-24 18:24:00 +0500
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 19:23:51 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (23.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (58.2ms)
+Completed 200 OK in 148ms (Views: 73.8ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 19:23:51 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 49ms (Views: 38.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 19:23:51 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (7.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (11.7ms)
+Completed 200 OK in 70ms (Views: 52.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-24 19:24:01 +0500
+
+
+Started GET "/start" for 127.0.0.1 at 2015-05-24 19:24:01 +0500
+Processing by SessionsController#checklogin as HTML
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2015-05-24 19:24:01 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 5]]
+  [1m[36mFriend Load (0.4ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.9ms)

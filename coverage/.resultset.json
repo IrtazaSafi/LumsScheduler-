@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/irtazasafi/LumsScheduler-/app/models/user.rb": [
+      "/home/usman/Desktop/LumsScheduler-/app/models/user.rb": [
         1,
         null,
         1,
@@ -20,23 +20,31 @@
         null,
         null,
         null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        2,
+        null,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null,
+        2,
+        2,
+        2,
         null,
         null
       ],
-      "/home/irtazasafi/LumsScheduler-/app/controllers/users_controller.rb": [
+      "/home/usman/Desktop/LumsScheduler-/app/controllers/users_controller.rb": [
         1,
-        null,
         1,
-        7,
-        null,
-        7,
-        7,
-        7,
-        null,
-        0,
-        0,
-        null,
-        null,
+        8,
+        8,
+        8,
         null,
         null,
         1,
@@ -51,26 +59,23 @@
         null,
         1,
         2,
+        2,
+        null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
         null,
         null,
-        0,
         null,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         1,
@@ -139,22 +144,22 @@
         null,
         null
       ],
-      "/home/irtazasafi/LumsScheduler-/app/controllers/application_controller.rb": [
+      "/home/usman/Desktop/LumsScheduler-/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/home/irtazasafi/LumsScheduler-/app/helpers/application_helper.rb": [
+      "/home/usman/Desktop/LumsScheduler-/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/irtazasafi/LumsScheduler-/app/helpers/sessions_helper.rb": [
+      "/home/usman/Desktop/LumsScheduler-/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/home/irtazasafi/LumsScheduler-/app/models/event.rb": [
+      "/home/usman/Desktop/LumsScheduler-/app/models/event.rb": [
         1,
         1,
         1,
@@ -165,14 +170,23 @@
         null,
         null
       ],
-      "/home/irtazasafi/LumsScheduler-/app/models/friend.rb": [
+      "/home/usman/Desktop/LumsScheduler-/app/models/friend.rb": [
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         null,
         null
       ]
     },
-    "timestamp": 1432462437
+    "timestamp": 1432480399
   }
 }

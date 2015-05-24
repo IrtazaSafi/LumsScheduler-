@@ -45,6 +45,7 @@ class UsersController < ApplicationController
 	def setMeeting
 		currUser_events  = User.find_by_id(params[:id]).events
 		otherUser_events = User.find_by_name(params[:friend_id]).events
+		all_events = currUser_events + otherUser_events
 		curDate = params[:curr_date]
 
 		year = curDate[6] + curDate[7] + curDate[8]+ curDate[9]
@@ -54,26 +55,34 @@ class UsersController < ApplicationController
 		today_events = []
 		free_time = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true]
 		
-		currUser_events.each { |x|
-			if x.starttime.day.to_s == day && x.endtime.day.to_s == day
-				today_events << x
-			end
-		}
-		otherUser_events.each { |x| 
-			if x.starttime.day.to_s == day && x.endtime.day.to_s == day
-				today_events << x
+		# currUser_events.each { |x|
+		# 	if x.starttime.day.to_s == day && x.endtime.day.to_s == day
+		# 		today_events << x
+		# 	end
+		# }
+		# otherUser_events.each { |x| 
+		# 	if x.starttime.day.to_s == day && x.endtime.day.to_s == day
+		# 		today_events << x
+		# 	end
+		# }
+		all_events.each { |event| 
+			if event.starttime.day.to_s == day && event.endtime.day.to_s == day
+				todays_event = event
+				((todays_event.starttime.hour.to_i) .. (todays_event.endtime.hour.to_i)).each do |i| 
+					free_time[i] = false
+				end
 			end
 		}
 		#VFDJVJKDFJVKJDFJV
 		# logger.debug("TODAYS EVENTS: ")
 		# logger.debug(today_events)
-		today_events.each do |x|
-			((x.starttime.hour.to_i) .. (x.endtime.hour.to_i)).each do |i| 
-				# logger.debug("SEE THIS BITCHES")
-				# logger.debug(i)
-				free_time[i] = false
-			end
-		end
+		# today_events.each do |x|
+		# 	((x.starttime.hour.to_i) .. (x.endtime.hour.to_i)).each do |i| 
+		# 		# logger.debug("SEE THIS BITCHES")
+		# 		# logger.debug(i)
+		# 		free_time[i] = false
+		# 	end
+		# end
 		@free_slots = []
 		for i in 0..23
 				if free_time[i] == true

@@ -33,6 +33,9 @@ module NavigationHelpers
     when /^the view free slots page/
       '/users/1/setMeeting/Irtaza%20Safi'
       #'/users/3/setMeeting/Usman%20Nadeem'
+    when /^the user details page/
+      '/users/3/view'
+      
       
     else
       begin

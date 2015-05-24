@@ -1,8 +1,12 @@
 class EventsController < ApplicationController
 
 def new
+	@event = Event.new
+	@event = Event.find_by_id(params[:id]);
+	
 
 end
+
 
 def create
 	#params[:event][:duration] = params[:event][:endtime] - params[:event][:startime]

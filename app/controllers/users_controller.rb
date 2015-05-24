@@ -16,10 +16,10 @@ class UsersController < ApplicationController
 	def view
 		
 		@currUser = User.find_by_id(params[:id])
-		if(@currUser == nil)
-			flash[:notice] = "No such user"
-			redirect_to user_path session[:user_id]
-		end
+		# if(@currUser == nil)
+		# 	flash[:notice] = "No such user"
+		# 	redirect_to user_path session[:user_id]
+		# end
 
 	end
 

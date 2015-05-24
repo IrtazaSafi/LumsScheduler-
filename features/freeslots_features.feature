@@ -5,10 +5,10 @@ I should be able to see all free available time slots with my friend's and my sc
 Background: events on user page
 
 	Given the following users exist:
-		| name          | uid |
-		| Usman Nadeem  | 1   |
-		| Umaira Sajjad | 2   |
-		| Irtaza Safi   | 3   |
+		| name          | uid |email|
+		| Usman Nadeem  | 1   |		|
+		| Umaira Sajjad | 2   |		|
+		| Irtaza Safi   | 3   |irtaza_safi@hotmail.com|
 
 	And  I am on the user home page for "Usman Nadeem"
 
@@ -22,6 +22,7 @@ Background: events on user page
 		| Irtaza Safi | 2|1|
  	
 Scenario: Add a friend (happy path)
+	Given I am on the user home page for "Usman Nadeem"
 	And I follow "Add New Friend"
 	Then I should be on the display users page
 	When I follow "Umaira Sajjad" whereby the logged in user is "Usman Nadeem"
@@ -40,3 +41,10 @@ Scenario: Find free slots (happy path)
 	And I follow 'Go!'
 	Then I should be on the view free slots page
 	And I should see "0:00 - 23:00"
+
+
+Scenario: View Detailed User Info(happy path)
+	Given I am on the user home page for "Irtaza Safi"
+	And I follow "Irtaza Safi"
+	Then I should be on the user details page
+	And I should see "irtaza_safi@hotmail.com"

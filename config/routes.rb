@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get 'users/:id/view' => 'users#view',:as=> :showprofile
   get 'users/:id/displayUsers' => 'users#displayUsers',:as=> :displayUsers
-  get 'users/:name/addFriend' => 'users#addFriend',:as=> :addFriend
+  get 'users/:id/:name/addFriend' => 'users#addFriend',:as=> :addFriend
   get 'users/:id/setMeeting/:friend_id' => 'users#setMeeting',:as=> :set_up_a_meeting
 
   get 'users/:id/showFriend/:friend_id' => 'users#showFriend',:as=> :showFriend

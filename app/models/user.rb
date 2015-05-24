@@ -17,4 +17,20 @@ class User < ActiveRecord::Base
 			:education => auth["info"]["education"])
 
 	end
+	def self.notYetFriends currUser
+		usersToNotDisplay = []
+		usersToNotDisplay << currUser
+
+		currUserFriends = currUser.friends
+
+		if currUserFriends != nil
+			currUserFriends.each { |friend| 
+				usersToNotDisplay << User.find_by_name(friend.name)
+			}
+		end
+
+		allusers = User.all
+		allusers -= usersToNotDisplay
+		return allusers
+	end
 end

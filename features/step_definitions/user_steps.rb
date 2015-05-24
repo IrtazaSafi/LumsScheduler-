@@ -1,6 +1,7 @@
 Given /the following users exist/ do |user_table|
 	user_table.hashes.each do |temp|
 		User.create temp		
+		# User.create_with_omniauth temp		
 	end
 end
 
@@ -25,14 +26,6 @@ end
 # 		Event.create event
 # 	end
 # end
-When(/^I follow "(.*?)" whereby the logged in user is "(.*?)"$/) do |arg1, arg2|
-	temp = User.find_by_name(arg1);
-	currUser = User.find_by_name(arg2)
-	# if temp.name == currUser.name
-	# else 		
-	# 	Friend.create!({:uid => 2, :name=> "Umaira Sajjad"});
-	# end
-end
 # Given(/^the following events exist for "(.*?)"/) do |arg1, events_table|
 # 	events_table.hashes.each do |event|
 # 		Event.create event
@@ -44,12 +37,13 @@ end
 # 		Event.create event
 # 	end
 # end
-Then /I should see "(.*?)" on the screen/ do |e1|
-	e1 = "Cannot add Friend!"
-end
-Then(/^I should see "(.*?)" on my screen$/) do |arg1|
-  arg1 = "Friend Added!!"
-end
+# Then I should not see "Usman Nadeem" on the screen
+# Then /I should not see "(.*)"/ do |e1|
+# 	page.body.should_not include("#{e1}")
+# end
+# Then /I should see "(.*)"/ do |e1|
+# 	page.body.should include("#{e1}")
+# end
 
 When(/^I follow 'Go!'$/) do
   click_button('Go!')

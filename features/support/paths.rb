@@ -18,7 +18,8 @@ module NavigationHelpers
     when /^the LumsScheduler home page/
       '/login'
     when /^the main user page for "(.*)"$/i
-      '/users/1/displayUsers'
+      id = User.find_by_name($1).id
+      '/users/#{id}/displayUsers'
     when /^the user home page for "(.*)"$/i
       user_path User.find_by_name($1).id
     when /^the Add new Events page/

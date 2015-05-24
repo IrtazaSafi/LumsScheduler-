@@ -25,14 +25,13 @@ Scenario: Add a friend (happy path)
 	Given I am on the user home page for "Usman Nadeem"
 	And I follow "Add New Friend"
 	Then I should be on the display users page
-	When I follow "Umaira Sajjad" whereby the logged in user is "Usman Nadeem"
-	Then I should be on the main user page for "Usman Nadeem"
-	And I should see "Friend Added!!" on my screen
+	When I follow "Umaira Sajjad" 
+	Then I should be on the user home page for "Usman Nadeem"
+	And I should see "Friend Added!!"
 Scenario: Cannot add oneself (sad path)
 	And I follow "Add New Friend"
 	Then I should be on the display users page
-	When I follow "Usman Nadeem" whereby the logged in user is "Usman Nadeem"
-	Then I should see "Cannot add Friend!" on the screen
+	Then I should not see "Usman Nadeem"
 Scenario: Find free slots (happy path)
 	Given I am on the user home page for "Usman Nadeem"
 	And I follow "Irtaza Safi"

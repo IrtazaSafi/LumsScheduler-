@@ -1,16 +1,9 @@
 class UsersController < ApplicationController
-
+	
 	def show
 		@currUser = User.find_by_id(params[:id])
-		# session[:user_id] = params[:id]
-		if @currUser != nil
-			@allevents = @currUser.events
-			@friends = @currUser.friends
-		else
-			flash[:notice] = "No such user"
-			redirect_to user_path session[:user_id]
-		end
-		#random coommmetn
+		@allevents = @currUser.events
+		@friends = @currUser.friends
 	end
 
 	def view
@@ -24,27 +17,23 @@ class UsersController < ApplicationController
 	end
 
 	def displayUsers
-		@allusers = User.all
+		currUser = User.find_by_id(params[:id])
+		@allusers = User.notYetFriends(currUser)
 	end
+
 	def addFriend
-		temp = User.find_by_name(params[:name]);
-		currUser = User.find_by_id(session[:user_id])
-		if temp.name == currUser.name
-			flash[:notice] = "Cannot add Friend!"
-			redirect_to displayUsers_path session[:user_id]
-			return
-		end
-		currUser.friends.each { |x| 
-			if x.name == temp.name
-				flash[:notice] = "Cannot add Friend!"
-				redirect_to displayUsers_path session[:user_id]
-				return
-			end
-		}
-		Friend.create!({:uid => temp.uid, :provider=>temp.provider, :name=>temp.name,:first_name=>temp.first_name,:last_name=>temp.last_name,:about=>temp.about,:gender=>temp.gender,:work=>temp.work,:email=>temp.email,:education=>temp.education,:user_id => session[:user_id]});
+		friend_to_add = User.find_by_name(params[:name]);
+		currUser = User.find_by_id(params[:id])
+
+		Friend.create!({:uid => friend_to_add.uid, :provider=>friend_to_add.provider, 
+			:name=>friend_to_add.name,:first_name=>friend_to_add.first_name,
+			:last_name=>friend_to_add.last_name,:about=>friend_to_add.about,
+			:gender=>friend_to_add.gender,:work=>friend_to_add.work,
+			:email=>friend_to_add.email,:education=>friend_to_add.education,
+			:user_id => params[:id]});
 		
-		flash[:notice] = "Friend Added!! #{temp.name}"
-		redirect_to user_path session[:user_id]
+		flash[:notice] = "Friend Added!! #{friend_to_add.name}"
+		redirect_to user_path params[:id]
 	end
 
 	def showFriend

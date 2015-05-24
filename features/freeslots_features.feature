@@ -5,23 +5,26 @@ I should be able to see all free available time slots with my friend's and my sc
 Background: events on user page
 
 	Given the following users exist:
-		| name | uid |
-		| Usman Nadeem | 1 |
-		| Umaira Sajjad | 2 |
-		| Irtaza Safi | 3 |
+		| name          | uid |
+		| Usman Nadeem  | 1   |
+		| Umaira Sajjad | 2   |
+		| Irtaza Safi   | 3   |
 
+	And the following events exist for "Irtaza Safi"
+	 	| title            | description  | ownerid | starttime | endtime |
+	 	| Software viva    | 17th May     | 2       | 14:30     | 15:00   |
+	 	| Mgmt exam        | 17th May     | 2       | 16:00     | 17:00   |
 
-	Given the following friends exist:
-		| name | uid |user_id|
-		| Usman Nadeem | 1 |3|
-		| Irtaza Safi | 2|1|
+	And the following events exist for "Usman Nadeem":
+	 	| title            | description  | ownerid | starttime | endtime |	                 								  
+	 	| Software viva    | 17th May     | 1       | 14:30     | 15:00   |					 				
+	 	| Automata exam    | 17th May     | 1       | 08:00     | 11:00   |
 
+	And  I am on the user home page for "Usman Nadeem"
 
-	And I am on the user home page for "Usman Nadeem"
-	And the following events exist:
-	 	| title            | description  | ownerid | starttime | endtime|
-	 	| Zirak's Birthday | 1st July     | 1       | 2015-02-03 12:08:00 UTC	|2015-02-03 13:08:00 UTC	|
-	 	| My birthday      | 25th January | 1       |2015-02-03 12:08:00 UTC	|2015-02-03 13:08:00 UTC	|
+	And the following friends exist for "Usman Nadeem"
+		| name          | uid |
+		| Irtaza Safi   | 3   |
 
 Scenario: Add a friend (happy path)
 	And I follow "Add New Friend"
@@ -35,11 +38,9 @@ Scenario: Cannot add oneself (sad path)
 	When I follow "Usman Nadeem" whereby the logged in user is "Usman Nadeem"
 	Then I should see "Cannot add Friend!" on the screen
 Scenario: Find free slots (happy path)
-	Given I am on the user home page for "Irtaza Safi"
-	And I follow "Usman Nadeem"
+	And I follow "Irtaza Safi"
 	Then I should be on the find free slots page
-	When I fill in "curr_date" with "12-05-2015"
+	When I fill in "curr_date" with "17-05-2015"
 	And I follow 'Go!'
 	Then I should be on the view free slots page
-	And I should see "0:00 - 23:00"
-
+	And I should see "18:00 - 23:00"

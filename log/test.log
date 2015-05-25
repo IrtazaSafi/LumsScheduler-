@@ -29350,3 +29350,682 @@ Processing by UsersController#view as HTML
   Rendered users/view.html.haml within layouts/application (3.7ms)
 Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms)
   [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (19.1ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:05:25.734001"], ["updated_at", "2015-05-25 04:05:25.734001"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (6.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (34.6ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:05:25.946688"], ["updated_at", "2015-05-25 04:05:25.946688"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:05:26.003333"], ["updated_at", "2015-05-25 04:05:26.003333"]]
+  [1m[36m (5.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:05:26 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (1.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (87.8ms)
+Completed 200 OK in 9217ms (Views: 8526.0ms | ActiveRecord: 14.3ms)
+  [1m[35m (11.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (18.5ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:05:36.109297"], ["updated_at", "2015-05-25 04:05:36.109297"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (17.9ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.3ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:05:36.188599"], ["updated_at", "2015-05-25 04:05:36.188599"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (9.9ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:05:36.489775"], ["updated_at", "2015-05-25 04:05:36.489775"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/1/displayUsers" for 127.0.0.1 at 2015-05-25 01:05:37 -0300
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFriend Load (13.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (7.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (24.0ms)
+Completed 200 OK in 204ms (Views: 68.3ms | ActiveRecord: 21.7ms)
+Started GET "/users/1/Umaira%20Sajjad/addFriend" for 127.0.0.1 at 2015-05-25 01:05:39 -0300
+Processing by UsersController#addFriend as HTML
+  Parameters: {"id"=>"1", "name"=>"Umaira Sajjad"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Umaira Sajjad"]]
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.8ms)[0m  [1mINSERT INTO "friends" ("uid", "name", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "2"], ["name", "Umaira Sajjad"], ["email", ""], ["user_id", 1], ["created_at", "2015-05-25 04:05:39.093721"], ["updated_at", "2015-05-25 04:05:39.093721"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 52ms (ActiveRecord: 8.9ms)
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:05:39 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (19.7ms)
+Completed 200 OK in 42ms (Views: 31.0ms | ActiveRecord: 1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+  [1m[36m (18.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (20.9ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:05:39.332551"], ["updated_at", "2015-05-25 04:05:39.332551"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:05:39.387530"], ["updated_at", "2015-05-25 04:05:39.387530"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:05:39.433242"], ["updated_at", "2015-05-25 04:05:39.433242"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:05:39 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (6.6ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (21.9ms)
+Completed 200 OK in 66ms (Views: 44.6ms | ActiveRecord: 7.2ms)
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:05:39.640273"], ["updated_at", "2015-05-25 04:05:39.640273"]]
+  [1m[35m (4.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:05:39.671212"], ["updated_at", "2015-05-25 04:05:39.671212"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (9.7ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:05:39.713197"], ["updated_at", "2015-05-25 04:05:39.713197"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/1/displayUsers" for 127.0.0.1 at 2015-05-25 01:05:39 -0300
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (8.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (6.2ms)
+Completed 200 OK in 52ms (Views: 24.0ms | ActiveRecord: 17.9ms)
+  [1m[36m (14.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.0ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:05:40.023700"], ["updated_at", "2015-05-25 04:05:40.023700"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (10.4ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:05:40.054224"], ["updated_at", "2015-05-25 04:05:40.054224"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (10.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (9.4ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:05:40.091480"], ["updated_at", "2015-05-25 04:05:40.091480"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:05:40 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (34.6ms)
+Completed 200 OK in 129ms (Views: 60.9ms | ActiveRecord: 7.7ms)
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (30.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:05:40.718802"], ["updated_at", "2015-05-25 04:05:40.718802"]]
+  [1m[35m (8.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:05:40.837295"], ["updated_at", "2015-05-25 04:05:40.837295"]]
+  [1m[36m (1.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (8.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:05:40.924966"], ["updated_at", "2015-05-25 04:05:40.924966"]]
+  [1m[35m (0.7ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:05:41 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (7.9ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (30.4ms)
+Completed 200 OK in 66ms (Views: 35.8ms | ActiveRecord: 8.3ms)
+Started GET "/users/1/showFriend/Irtaza%20Safi" for 127.0.0.1 at 2015-05-25 01:05:41 -0300
+Processing by UsersController#showFriend as HTML
+  Parameters: {"id"=>"1", "friend_id"=>"Irtaza Safi"}
+  Rendered users/showFriend.html.haml within layouts/application (183.7ms)
+Completed 200 OK in 213ms (Views: 212.0ms | ActiveRecord: 0.0ms)
+Started GET "/users/1/setMeeting/Irtaza%20Safi?utf8=%E2%9C%93&curr_date=23-05-2015&commit=Go%21" for 127.0.0.1 at 2015-05-25 01:05:41 -0300
+Processing by UsersController#setMeeting as HTML
+  Parameters: {"utf8"=>"✓", "curr_date"=>"23-05-2015", "commit"=>"Go!", "id"=>"1", "friend_id"=>"Irtaza Safi"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Irtaza Safi"]]
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 3]]
+  Rendered users/setMeeting.html.haml within layouts/application (29.4ms)
+Completed 200 OK in 114ms (Views: 89.4ms | ActiveRecord: 1.7ms)
+  [1m[36m (13.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (7.1ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:05:41.703777"], ["updated_at", "2015-05-25 04:05:41.703777"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:05:41.727230"], ["updated_at", "2015-05-25 04:05:41.727230"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:05:41.751396"], ["updated_at", "2015-05-25 04:05:41.751396"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (4.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:05:41 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (14.6ms)
+Completed 200 OK in 39ms (Views: 25.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:05:41.883409"], ["updated_at", "2015-05-25 04:05:41.883409"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (8.3ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:05:41.918277"], ["updated_at", "2015-05-25 04:05:41.918277"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (7.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.2ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:05:41.973737"], ["updated_at", "2015-05-25 04:05:41.973737"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+Started GET "/users/3" for 127.0.0.1 at 2015-05-25 01:05:42 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 3]]
+  Rendered users/show.html.haml within layouts/application (21.6ms)
+Completed 200 OK in 51ms (Views: 34.6ms | ActiveRecord: 1.1ms)
+Started GET "/users/3/view" for 127.0.0.1 at 2015-05-25 01:05:42 -0300
+Processing by UsersController#view as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/view.html.haml within layouts/application (71.1ms)
+Completed 200 OK in 128ms (Views: 115.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (25.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.6ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:10:36.239658"], ["updated_at", "2015-05-25 04:10:36.239658"]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:10:36.272208"], ["updated_at", "2015-05-25 04:10:36.272208"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:10:36.283103"], ["updated_at", "2015-05-25 04:10:36.283103"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:10:36 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (41.0ms)
+Completed 200 OK in 1543ms (Views: 1202.4ms | ActiveRecord: 2.7ms)
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:10:38.758897"], ["updated_at", "2015-05-25 04:10:38.758897"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (7.8ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:10:38.798561"], ["updated_at", "2015-05-25 04:10:38.798561"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:10:38.989782"], ["updated_at", "2015-05-25 04:10:38.989782"]]
+  [1m[35m (4.9ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/1/displayUsers" for 127.0.0.1 at 2015-05-25 01:10:39 -0300
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFriend Load (4.8ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 222ms (Views: 16.2ms | ActiveRecord: 5.9ms)
+Started GET "/users/1/Umaira%20Sajjad/addFriend" for 127.0.0.1 at 2015-05-25 01:10:39 -0300
+Processing by UsersController#addFriend as HTML
+  Parameters: {"id"=>"1", "name"=>"Umaira Sajjad"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Umaira Sajjad"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "friends" ("uid", "name", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "2"], ["name", "Umaira Sajjad"], ["email", ""], ["user_id", 1], ["created_at", "2015-05-25 04:10:39.765580"], ["updated_at", "2015-05-25 04:10:39.765580"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 44ms (ActiveRecord: 4.7ms)
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:10:39 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.0ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (18.8ms)
+Completed 200 OK in 50ms (Views: 31.0ms | ActiveRecord: 0.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+  [1m[36m (12.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (13.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (10.9ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:10:40.174884"], ["updated_at", "2015-05-25 04:10:40.174884"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (12.8ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:10:40.213250"], ["updated_at", "2015-05-25 04:10:40.213250"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:10:40.247085"], ["updated_at", "2015-05-25 04:10:40.247085"]]
+  [1m[36m (7.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (4.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:10:40 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (4.6ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (19.0ms)
+Completed 200 OK in 34ms (Views: 24.2ms | ActiveRecord: 5.1ms)
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:10:40.371037"], ["updated_at", "2015-05-25 04:10:40.371037"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:10:40.399801"], ["updated_at", "2015-05-25 04:10:40.399801"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.2ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:10:40.441511"], ["updated_at", "2015-05-25 04:10:40.441511"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/1/displayUsers" for 127.0.0.1 at 2015-05-25 01:10:40 -0300
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Irtaza Safi"]]
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 7.2ms | ActiveRecord: 2.0ms)
+  [1m[36m (20.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:10:40.650369"], ["updated_at", "2015-05-25 04:10:40.650369"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.3ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:10:40.692581"], ["updated_at", "2015-05-25 04:10:40.692581"]]
+  [1m[35m (1.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (11.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.2ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:10:40.731101"], ["updated_at", "2015-05-25 04:10:40.731101"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:10:40 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.9ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (26.4ms)
+Completed 200 OK in 56ms (Views: 45.7ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:10:40.895807"], ["updated_at", "2015-05-25 04:10:40.895807"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.5ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:10:40.937387"], ["updated_at", "2015-05-25 04:10:40.937387"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:10:41.093044"], ["updated_at", "2015-05-25 04:10:41.093044"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:10:41 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 0.6ms)
+Started GET "/users/1/showFriend/Irtaza%20Safi" for 127.0.0.1 at 2015-05-25 01:10:41 -0300
+Processing by UsersController#showFriend as HTML
+  Parameters: {"id"=>"1", "friend_id"=>"Irtaza Safi"}
+  Rendered users/showFriend.html.haml within layouts/application (85.7ms)
+Completed 200 OK in 117ms (Views: 115.3ms | ActiveRecord: 0.0ms)
+Started GET "/users/1/setMeeting/Irtaza%20Safi?utf8=%E2%9C%93&curr_date=23-05-2015&commit=Go%21" for 127.0.0.1 at 2015-05-25 01:10:41 -0300
+Processing by UsersController#setMeeting as HTML
+  Parameters: {"utf8"=>"✓", "curr_date"=>"23-05-2015", "commit"=>"Go!", "id"=>"1", "friend_id"=>"Irtaza Safi"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Irtaza Safi"]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEvent Load (5.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 3]]
+  Rendered users/setMeeting.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 64ms (Views: 38.0ms | ActiveRecord: 5.9ms)
+  [1m[36m (9.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.7ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:10:41.530814"], ["updated_at", "2015-05-25 04:10:41.530814"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:10:41.559707"], ["updated_at", "2015-05-25 04:10:41.559707"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:10:41.583934"], ["updated_at", "2015-05-25 04:10:41.583934"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Irtaza Safi"]]
+Started GET "/users/3" for 127.0.0.1 at 2015-05-25 01:10:41 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (1.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 3]]
+  [1m[36mFriend Load (0.3ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.haml within layouts/application (32.1ms)
+Completed 200 OK in 79ms (Views: 58.6ms | ActiveRecord: 1.9ms)
+Started GET "/users/3/view" for 127.0.0.1 at 2015-05-25 01:10:41 -0300
+Processing by UsersController#view as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/view.html.haml within layouts/application (65.8ms)
+Completed 200 OK in 133ms (Views: 128.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (18.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:14:38.797712"], ["updated_at", "2015-05-25 04:14:38.797712"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:14:38.831650"], ["updated_at", "2015-05-25 04:14:38.831650"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:14:38.842129"], ["updated_at", "2015-05-25 04:14:38.842129"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:14:39 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (10.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.5ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (40.0ms)
+Completed 200 OK in 1882ms (Views: 1394.7ms | ActiveRecord: 12.9ms)
+Started GET "/users/1/displayUsers" for 127.0.0.1 at 2015-05-25 01:14:41 -0300
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFriend Load (0.7ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (81.7ms)
+Completed 200 OK in 222ms (Views: 188.9ms | ActiveRecord: 1.8ms)
+Started GET "/users/1/Umaira%20Sajjad/addFriend" for 127.0.0.1 at 2015-05-25 01:14:42 -0300
+Processing by UsersController#addFriend as HTML
+  Parameters: {"id"=>"1", "name"=>"Umaira Sajjad"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Umaira Sajjad"]]
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (9.0ms)[0m  [1mINSERT INTO "friends" ("uid", "name", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "2"], ["name", "Umaira Sajjad"], ["email", ""], ["user_id", 1], ["created_at", "2015-05-25 04:14:42.378862"], ["updated_at", "2015-05-25 04:14:42.378862"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 138ms (ActiveRecord: 10.4ms)
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:14:42 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (66.2ms)
+Completed 200 OK in 75ms (Views: 70.3ms | ActiveRecord: 0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+  [1m[36m (21.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (7.5ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (16.5ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:14:42.694251"], ["updated_at", "2015-05-25 04:14:42.694251"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (12.5ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:14:42.763195"], ["updated_at", "2015-05-25 04:14:42.763195"]]
+  [1m[35m (0.7ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (9.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:14:42.818378"], ["updated_at", "2015-05-25 04:14:42.818378"]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:14:42 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.0ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (20.0ms)
+Completed 200 OK in 66ms (Views: 53.5ms | ActiveRecord: 0.8ms)
+Started GET "/users/1/displayUsers" for 127.0.0.1 at 2015-05-25 01:14:43 -0300
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 14ms (Views: 6.7ms | ActiveRecord: 0.9ms)
+  [1m[36m (15.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.7ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:14:43.362388"], ["updated_at", "2015-05-25 04:14:43.362388"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (8.5ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:14:43.410275"], ["updated_at", "2015-05-25 04:14:43.410275"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (9.0ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:14:43.437640"], ["updated_at", "2015-05-25 04:14:43.437640"]]
+  [1m[36m (5.9ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:14:43 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 36ms (Views: 21.9ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (9.4ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:14:43.784446"], ["updated_at", "2015-05-25 04:14:43.784446"]]
+  [1m[35m (15.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:14:43.838234"], ["updated_at", "2015-05-25 04:14:43.838234"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:14:43.943423"], ["updated_at", "2015-05-25 04:14:43.943423"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (14.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (11.0ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:14:44.614420"], ["updated_at", "2015-05-25 04:14:44.614420"]]
+  [1m[36m (9.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:14:44.666738"], ["updated_at", "2015-05-25 04:14:44.666738"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:14:44.703541"], ["updated_at", "2015-05-25 04:14:44.703541"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Irtaza Safi"]]
+Started GET "/users/3" for 127.0.0.1 at 2015-05-25 01:14:44 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 3]]
+  [1m[36mFriend Load (13.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.haml within layouts/application (18.7ms)
+Completed 200 OK in 119ms (Views: 54.2ms | ActiveRecord: 13.8ms)
+Started GET "/users/3/view" for 127.0.0.1 at 2015-05-25 01:14:45 -0300
+Processing by UsersController#view as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/view.html.haml within layouts/application (36.0ms)
+Completed 200 OK in 65ms (Views: 62.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (24.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.6ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:18:36.741678"], ["updated_at", "2015-05-25 04:18:36.741678"]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:18:36.803643"], ["updated_at", "2015-05-25 04:18:36.803643"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:18:36.825146"], ["updated_at", "2015-05-25 04:18:36.825146"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:18:37 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (13.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.6ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (178.9ms)
+Completed 200 OK in 2531ms (Views: 1994.8ms | ActiveRecord: 15.4ms)
+Started GET "/users/1/displayUsers" for 127.0.0.1 at 2015-05-25 01:18:39 -0300
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (10.2ms)
+Completed 200 OK in 49ms (Views: 32.9ms | ActiveRecord: 1.4ms)
+Started GET "/users/1/Umaira%20Sajjad/addFriend" for 127.0.0.1 at 2015-05-25 01:18:40 -0300
+Processing by UsersController#addFriend as HTML
+  Parameters: {"id"=>"1", "name"=>"Umaira Sajjad"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Umaira Sajjad"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "friends" ("uid", "name", "email", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "2"], ["name", "Umaira Sajjad"], ["email", ""], ["user_id", 1], ["created_at", "2015-05-25 04:18:40.660528"], ["updated_at", "2015-05-25 04:18:40.660528"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 187ms (ActiveRecord: 16.2ms)
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:18:40 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (1.5ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (10.7ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (153.6ms)
+Completed 200 OK in 217ms (Views: 167.6ms | ActiveRecord: 16.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+  [1m[36m (17.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:18:41.138800"], ["updated_at", "2015-05-25 04:18:41.138800"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (17.3ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:18:41.165863"], ["updated_at", "2015-05-25 04:18:41.165863"]]
+  [1m[35m (6.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:18:41.200197"], ["updated_at", "2015-05-25 04:18:41.200197"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (4.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:18:41 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.3ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 298ms (Views: 273.8ms | ActiveRecord: 1.3ms)
+Started GET "/users/1/displayUsers" for 127.0.0.1 at 2015-05-25 01:18:41 -0300
+Processing by UsersController#displayUsers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (9.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/displayUsers.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 58ms (Views: 27.5ms | ActiveRecord: 9.9ms)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (8.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (7.1ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:18:41.840454"], ["updated_at", "2015-05-25 04:18:41.840454"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (9.4ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:18:41.884308"], ["updated_at", "2015-05-25 04:18:41.884308"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (5.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:18:41.926128"], ["updated_at", "2015-05-25 04:18:41.926128"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:18:42 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (6.4ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (13.2ms)
+Completed 200 OK in 43ms (Views: 26.4ms | ActiveRecord: 6.9ms)
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.3ms)[0m  [1mINSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Busy"], ["description", "23rd May"], ["ownerid", 1], ["starttime", "2015-05-23 12:00:00.000000"], ["endtime", "2015-05-23 15:00:00.000000"], ["created_at", "2015-05-25 04:18:42.267488"], ["updated_at", "2015-05-25 04:18:42.267488"]]
+  [1m[35m (4.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (6.1ms)[0m  INSERT INTO "events" ("title", "description", "ownerid", "starttime", "endtime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Exam"], ["description", "25th January"], ["ownerid", 1], ["starttime", "2015-01-25 08:00:00.000000"], ["endtime", "2015-01-25 11:00:00.000000"], ["created_at", "2015-05-25 04:18:42.301522"], ["updated_at", "2015-05-25 04:18:42.301522"]]
+  [1m[36m (4.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "friends" ("name", "uid", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Irtaza Safi"], ["uid", "2"], ["user_id", 1], ["created_at", "2015-05-25 04:18:42.374390"], ["updated_at", "2015-05-25 04:18:42.374390"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "Usman Nadeem"]]
+Started GET "/users/1" for 127.0.0.1 at 2015-05-25 01:18:42 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mFriend Load (0.4ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.haml within layouts/application (33.6ms)
+Completed 200 OK in 66ms (Views: 46.0ms | ActiveRecord: 1.3ms)
+Started GET "/users/1/showFriend/Irtaza%20Safi" for 127.0.0.1 at 2015-05-25 01:18:42 -0300
+Processing by UsersController#showFriend as HTML
+  Parameters: {"id"=>"1", "friend_id"=>"Irtaza Safi"}
+  Rendered users/showFriend.html.haml within layouts/application (304.0ms)
+Completed 200 OK in 326ms (Views: 324.4ms | ActiveRecord: 0.0ms)
+Started GET "/users/1/setMeeting/Irtaza%20Safi?utf8=%E2%9C%93&curr_date=23-05-2015&commit=Go%21" for 127.0.0.1 at 2015-05-25 01:18:42 -0300
+Processing by UsersController#setMeeting as HTML
+  Parameters: {"utf8"=>"✓", "curr_date"=>"23-05-2015", "commit"=>"Go!", "id"=>"1", "friend_id"=>"Irtaza Safi"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Irtaza Safi"]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 3]]
+  Rendered users/setMeeting.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 71ms (Views: 38.2ms | ActiveRecord: 1.3ms)
+  [1m[36m (18.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Usman Nadeem"], ["uid", "1"], ["email", ""], ["created_at", "2015-05-25 04:18:43.139743"], ["updated_at", "2015-05-25 04:18:43.139743"]]
+  [1m[36m (7.9ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Umaira Sajjad"], ["uid", "2"], ["email", ""], ["created_at", "2015-05-25 04:18:43.171840"], ["updated_at", "2015-05-25 04:18:43.171840"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (13.7ms)[0m  INSERT INTO "users" ("name", "uid", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Irtaza Safi"], ["uid", "3"], ["email", "irtaza_safi@hotmail.com"], ["created_at", "2015-05-25 04:18:43.193297"], ["updated_at", "2015-05-25 04:18:43.193297"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "Irtaza Safi"]]
+Started GET "/users/3" for 127.0.0.1 at 2015-05-25 01:18:43 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = ?  [["user_id", 3]]
+  [1m[36mFriend Load (7.3ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered users/show.html.haml within layouts/application (22.2ms)
+Completed 200 OK in 35ms (Views: 23.0ms | ActiveRecord: 7.8ms)
+Started GET "/users/3/view" for 127.0.0.1 at 2015-05-25 01:18:43 -0300
+Processing by UsersController#view as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/view.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (3.2ms)[0m  [1mrollback transaction[0m

@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/usman/Desktop/LumsScheduler-/app/models/user.rb": [
+      "/home/saasbook/Documents/LumsScheduler-/app/models/user.rb": [
         1,
         null,
         1,
@@ -29,7 +29,7 @@
         null,
         2,
         2,
-        2,
+        0,
         null,
         null,
         null,
@@ -39,12 +39,12 @@
         null,
         null
       ],
-      "/home/usman/Desktop/LumsScheduler-/app/controllers/users_controller.rb": [
+      "/home/saasbook/Documents/LumsScheduler-/app/controllers/users_controller.rb": [
         1,
         1,
-        8,
-        8,
-        8,
+        6,
+        6,
+        6,
         null,
         null,
         1,
@@ -76,31 +76,40 @@
         1,
         1,
         1,
-        null,
-        null,
         1,
         null,
         null,
+        1,
         null,
         null,
-        1,
-        1,
-        1,
-        1,
+        null,
         null,
         1,
         1,
         1,
         1,
         1,
+        null,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         1,
         0,
         0,
-        null,
-        null,
-        1,
         0,
         0,
         null,
@@ -108,11 +117,12 @@
         null,
         null,
         null,
-        1,
-        0,
         null,
         null,
-        0,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         1,
@@ -144,22 +154,22 @@
         null,
         null
       ],
-      "/home/usman/Desktop/LumsScheduler-/app/controllers/application_controller.rb": [
+      "/home/saasbook/Documents/LumsScheduler-/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/home/usman/Desktop/LumsScheduler-/app/helpers/application_helper.rb": [
+      "/home/saasbook/Documents/LumsScheduler-/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/usman/Desktop/LumsScheduler-/app/helpers/sessions_helper.rb": [
+      "/home/saasbook/Documents/LumsScheduler-/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/home/usman/Desktop/LumsScheduler-/app/models/event.rb": [
+      "/home/saasbook/Documents/LumsScheduler-/app/models/event.rb": [
         1,
         1,
         1,
@@ -170,7 +180,7 @@
         null,
         null
       ],
-      "/home/usman/Desktop/LumsScheduler-/app/models/friend.rb": [
+      "/home/saasbook/Documents/LumsScheduler-/app/models/friend.rb": [
         1,
         1,
         1,
@@ -187,6 +197,6 @@
         null
       ]
     },
-    "timestamp": 1432480399
+    "timestamp": 1432527523
   }
 }
